@@ -5,10 +5,13 @@
 #include "Renderer.h"
 #import "Shader.h"
 #include <iostream>
+#include "RenderCommand.h"
 
 
 id <MTLDevice> Renderer::device = nil;
 id <MTLRenderCommandEncoder> Renderer::encoder = nil;
+MTLRenderPassDescriptor* Renderer::renderPass = nil;
+id<MTLCommandBuffer> Renderer::commandBuffer = nil;
 
 void Renderer::Init() {
 
@@ -19,6 +22,20 @@ void Renderer::Init() {
     swapchain.framebufferOnly = YES;
     swapchain.device = device;
     swapchain.opaque = YES;
+
+
+    MTLViewport viewport =
+            {
+                    .originX = 0.0,
+                    .originY = 0.0,
+                    .width = 1280,
+                    .height = 800,
+                    .znear = 0.0,
+                    .zfar = 1.0
+            };
+    [encoder setViewport:viewport];
+
+
 
 }
 
@@ -31,7 +48,10 @@ void Renderer::SwapChain() {
     renderPass.colorAttachments[0].loadAction = MTLLoadActionClear;
     renderPass.colorAttachments[0].storeAction = MTLStoreActionStore;
     renderPass.colorAttachments[0].texture = surface.texture;
+
     commandBuffer = [queue commandBuffer];
+
+
 
 }
 
@@ -41,21 +61,27 @@ void Renderer::Clear(const glm::vec4 &color) {
 
 }
 
-void Renderer::BeginRender(const std::shared_ptr<VertexBuffer> &vertexBuffer,
-                           const std::shared_ptr<IndexBuffer> &indexBuffer, const std::shared_ptr<Shader> &shader) {
+void Renderer::BeginRender(const std::shared_ptr<Shader> &shader, const glm::mat4& transform) {
 
-    encoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPass];
     shader->Bind();
-    [encoder setVertexBuffer:vertexBuffer->GetBuffer() offset:0 atIndex:0];
-    [encoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle indexCount:indexBuffer->GetCount() indexType:MTLIndexTypeUInt32
-                       indexBuffer:indexBuffer->GetBuffer() indexBufferOffset:0];
+    shader->SetMat4(transform);
 
 }
 
 void Renderer::EndRender() {
+
+    RenderCommand::DrawIndexed(vertexBuffer, indexBuffer);
+
     [encoder endEncoding];
     [commandBuffer presentDrawable:surface];
     [commandBuffer commit];
+}
+
+void
+Renderer::Submit(const std::shared_ptr<VertexBuffer> &vertexBuffer, const std::shared_ptr<IndexBuffer> &indexBuffer) {
+    encoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPass];
+    this->vertexBuffer = vertexBuffer;
+    this->indexBuffer = indexBuffer;
 }
 
 

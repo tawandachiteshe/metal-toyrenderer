@@ -18,7 +18,9 @@ add_executable(
         ${PROJECT_NAME}
         # Source Files (make sure to surround in quotations so CMake treats it as a list)
         main.mm
-        Application.mm Application.h Renderer.mm Renderer.h Window.mm Window.h VertexBuffer.mm VertexBuffer.h Shader.mm Shader.h BufferLayout.h IndexBuffer.mm IndexBuffer.h)
+        third_party/stb_image.h
+        third_party/stb_image.mm
+        Application.mm Application.h Renderer.mm Renderer.h Window.mm Window.h VertexBuffer.mm VertexBuffer.h Shader.mm Shader.h BufferLayout.h IndexBuffer.mm IndexBuffer.h RenderCommand.mm RenderCommand.h Texture.mm Texture.h)
 
 # 🔗 Link CrossWindow to your project:
 

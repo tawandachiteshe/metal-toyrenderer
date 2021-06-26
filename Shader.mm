@@ -6,6 +6,7 @@
 #import <fstream>
 #include "Shader.h"
 #import "Renderer.h"
+#include <glm/gtc/type_ptr.hpp>
 
 
 Shader::Shader(const std::string &srcPath) {
@@ -38,6 +39,13 @@ void Shader::Bind() {
     [pipelineStateDescriptor setFragmentFunction:fragmentProgram];
     [pipelineStateDescriptor setVertexDescriptor:m_VertexLayout];
     pipelineStateDescriptor.colorAttachments[0].pixelFormat = MTLPixelFormatBGRA8Unorm;
+    pipelineStateDescriptor.colorAttachments[0].blendingEnabled = YES;
+    pipelineStateDescriptor.colorAttachments[0].rgbBlendOperation = MTLBlendOperationAdd;
+    pipelineStateDescriptor.colorAttachments[0].sourceRGBBlendFactor = MTLBlendFactorSourceAlpha;
+    pipelineStateDescriptor.colorAttachments[0].destinationRGBBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
+    pipelineStateDescriptor.colorAttachments[0].alphaBlendOperation = MTLBlendOperationAdd;
+    pipelineStateDescriptor.colorAttachments[0].sourceAlphaBlendFactor = MTLBlendFactorOne;
+    pipelineStateDescriptor.colorAttachments[0].destinationAlphaBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
     pipelineState = [Renderer::GetDevice() newRenderPipelineStateWithDescriptor:pipelineStateDescriptor error:nil];
     [Renderer::GetEncoder() setRenderPipelineState:pipelineState];
 }
@@ -46,4 +54,10 @@ void Shader::Release() {
     [vertexProgram release];
     [fragmentProgram release];
     [library release];
+}
+
+void Shader::SetMat4(const glm::mat4 &mat) {
+
+    [Renderer::GetEncoder() setVertexBytes:glm::value_ptr(mat) length:sizeof(mat) atIndex:1];
+
 }
