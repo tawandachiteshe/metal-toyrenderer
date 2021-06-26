@@ -64,10 +64,13 @@ void Application::Run() {
 }
 
 void Application::Render() {
-    renderer->Clear(glm::vec4(0.3f, 0.3f, 0.3f, 1));
+    static float rotate_ = 0.0f;
+    rotate_ += 1.0f / 60.0f;
+    glm::mat4 rotate = projectionview * glm::rotate(glm::mat4(1.0f), glm::radians(rotate_*15.0f), glm::vec3(0, 0, 1));
+            renderer->Clear(glm::vec4(0.3f, 0.3f, 0.3f, 1));
     renderer->Submit(vertexBuffer, indexBuffer);
     texture->Bind();
-    renderer->BeginRender(whiteShader, projectionview);
-    whiteShader->SetMat4(projectionview);
+    renderer->BeginRender(whiteShader, rotate);
+    whiteShader->SetMat4(rotate);
     renderer->EndRender();
 }
