@@ -37,7 +37,7 @@ void Application::Init() {
             0, 1, 2, 0, 2, 3
     };
 
-    texture = std::make_shared<Texture>("textures/waifu.png");
+    texture = std::make_shared<Texture>("Assets/textures/waifu.png");
 
 
     vertexBuffer = std::make_shared<VertexBuffer>((void *) positions, sizeof(positions));
@@ -48,7 +48,7 @@ void Application::Init() {
 
     indexBuffer = std::make_shared<IndexBuffer>(indices, 6);
 
-    whiteShader = std::make_shared<Shader>("Shaders/whiteShader.metal");
+    whiteShader = std::make_shared<Shader>("Assets/Shaders/whiteShader.metal");
     whiteShader->SetVertexLayout(vertexBuffer->GetLayout());
 }
 

@@ -5,10 +5,10 @@
 #ifndef UNTITLED_APPLICATION_H
 #define UNTITLED_APPLICATION_H
 #include <memory>
-#import "Window.h"
-#import "Renderer.h"
-#import "IndexBuffer.h"
-#import "Texture.h"
+#import "Window/Window.h"
+#import "Renderer/Renderer.h"
+#import "Renderer/IndexBuffer.h"
+#import "Renderer/Texture.h"
 
 class Application {
 

@@ -3,7 +3,7 @@
 //
 
 #include "Texture.h"
-#import "third_party/stb_image.h"
+#import "../third_party/stb_image.h"
 #import "Renderer.h"
 #import <Metal/Metal.h>
 
