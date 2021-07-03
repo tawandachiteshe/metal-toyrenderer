@@ -28,7 +28,7 @@ struct Renderer2DStorage {
     const uint32_t MaxQuadsIndices = MaxQuads * 6;
 
     uint32_t QuadIndexCount = 0;
-    static const uint32_t MaxTextureSlots = 8;
+    static const uint32_t MaxTextureSlots = 16;
 
     std::shared_ptr<VertexBuffer> quadVertexBuffer;
     std::shared_ptr<IndexBuffer> indexBuffer;
@@ -41,7 +41,7 @@ struct Renderer2DStorage {
 
     std::array<std::shared_ptr<Texture>, MaxTextureSlots> textureSlots;
     glm::vec4 QuadVertexPositions[4];
-    float textureSlotIndex = 0.0f;
+    float textureSlotIndex = 1.0f;
 };
 
 static Renderer2DStorage s_Storage;
@@ -197,11 +197,60 @@ void Renderer2D::DrawQuad(const glm::mat4 &transform, const glm::vec4 &color) {
         s_Storage.QuadVertexBufferPtr->position = transform * s_Storage.QuadVertexPositions[i];
         s_Storage.QuadVertexBufferPtr->color = color;
         s_Storage.QuadVertexBufferPtr->uvs = textureCoords[i];
-        s_Storage.QuadVertexBufferPtr->textureID = 1.0f;
+        s_Storage.QuadVertexBufferPtr->textureID = textureIndex;
         s_Storage.QuadVertexBufferPtr->tillingFactor = tilingFactor;
         s_Storage.QuadVertexBufferPtr++;
     }
 
     s_Storage.QuadIndexCount += 6;
+
+}
+
+void Renderer2D::DrawQuad(const glm::vec3 &position, const glm::vec2 &size, const std::shared_ptr<Texture> &texture,
+                          float tilingFactor, const glm::vec4 &tintColor) {
+
+    glm::mat4 transform = glm::translate(glm::mat4(1.0f), position) * glm::scale(glm::mat4(1.0f), {size.x, size.y, 1.0f});
+
+
+    constexpr size_t quadVertexCount = (size_t)4;
+
+    float textureIndex = 0.0f; // White Texture
+    constexpr glm::vec2 textureCoords[] = { {0.0f, 0.0f},
+                                            {1.0f, 0.0f},
+                                            {1.0f, 1.0f},
+                                            {0.0f, 1.0f} };
+
+    if (s_Storage.QuadIndexCount >= s_Storage.MaxQuadsIndices)
+        FlushAndReset();
+
+
+    for (uint32_t i = 0; i < s_Storage.textureSlotIndex; i++) {
+
+        if(s_Storage.textureSlots[i].get() == texture.get()) {
+            textureIndex = (float)i;
+            break;
+        }
+    }
+
+    if (textureIndex == 0.0f) {
+        if (s_Storage.textureSlotIndex >= Renderer2DStorage::MaxTextureSlots)
+            FlushAndReset();
+        textureIndex = (float)s_Storage.textureSlotIndex;
+        s_Storage.textureSlots[s_Storage.textureSlotIndex] = texture;
+        s_Storage.textureSlotIndex++;
+    }
+
+
+    for (size_t i = 0; i < quadVertexCount; i++) {
+        s_Storage.QuadVertexBufferPtr->position = transform * s_Storage.QuadVertexPositions[i];
+        s_Storage.QuadVertexBufferPtr->color = tintColor;
+        s_Storage.QuadVertexBufferPtr->uvs = textureCoords[i];
+        s_Storage.QuadVertexBufferPtr->textureID = textureIndex;
+        s_Storage.QuadVertexBufferPtr->tillingFactor = tilingFactor;
+        s_Storage.QuadVertexBufferPtr++;
+    }
+
+    s_Storage.QuadIndexCount += 6;
+
 
 }

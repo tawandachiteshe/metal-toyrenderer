@@ -39,9 +39,7 @@ void Application::Init() {
             0, 1, 2, 0, 2, 3
     };
 
-    texture = std::make_shared<Texture>(1, 1);
-    const uint32_t data = 0xFF0000FF;
-    texture->SetData((void*)&data, sizeof(data));
+    texture = std::make_shared<Texture>("Assets/textures/waifu.png");
 
 
 
@@ -98,9 +96,10 @@ void Application::Render() {
 //    renderer->Draw();
 //    renderer->EndRender();
 
-    texture->Bind();
+    texture->Bind(2);
     Renderer2D::BeginScene();
     Renderer2D::DrawQuad({0.0f, 0.0f, 1.0f}, {0.2f, 0.2f}, {1.0f, 1.0f, 1.0f, 1.0f});
+    Renderer2D::DrawQuad({0.0f, 0.8f, 1.0f}, {0.2f, 0.2f}, texture);
     Renderer2D::DrawQuad({0.0f, 0.6f, 1.0f}, {0.2f, 0.2f}, {1.0f, 0.0f, 0.0f, 1.0f});
     Renderer2D::EndScene();
 
