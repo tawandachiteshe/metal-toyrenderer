@@ -101,7 +101,7 @@ void Application::Render() {
     texture->Bind();
     Renderer2D::BeginScene();
     Renderer2D::DrawQuad({0.0f, 0.0f, 1.0f}, {0.2f, 0.2f}, {1.0f, 1.0f, 1.0f, 1.0f});
-    Renderer2D::DrawQuad({0.0f, 0.6f, 1.0f}, {0.2f, 0.2f}, {1.0f, 0.0f, 0 .0f, 1.0f});
+    Renderer2D::DrawQuad({0.0f, 0.6f, 1.0f}, {0.2f, 0.2f}, {1.0f, 0.0f, 0.0f, 1.0f});
     Renderer2D::EndScene();
 
 
