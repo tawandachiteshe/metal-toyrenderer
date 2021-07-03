@@ -98,9 +98,7 @@ void Application::Render() {
 
     texture->Bind(2);
     Renderer2D::BeginScene();
-    Renderer2D::DrawQuad({0.0f, 0.0f, 1.0f}, {0.2f, 0.2f}, {1.0f, 1.0f, 1.0f, 1.0f});
-    Renderer2D::DrawQuad({0.0f, 0.8f, 1.0f}, {0.2f, 0.2f}, texture);
-    Renderer2D::DrawQuad({0.0f, 0.6f, 1.0f}, {0.2f, 0.2f}, {1.0f, 0.0f, 0.0f, 1.0f});
+    Renderer2D::DrawRotatedQuad({0.0f, 0.0f, 1.0f}, {1.2f, 1.2f}, rotate_ * 15.0f, texture, 1000.0f, {1.0f, 1.0f, 1.0f, 1.0f});
     Renderer2D::EndScene();
 
 

@@ -45,7 +45,7 @@ fragment half4 fragment_main(VertexOut in [[stage_in]], texture2d<half> colorTex
                                                         texture2d<half> colorTexture5 [[ texture(6) ]],
                                                         texture2d<half> colorTexture6 [[ texture(7) ]],
                                                         texture2d<half> colorTexture7 [[ texture(8) ]]) { // 1
-    constexpr sampler textureSampler = (mag_filter::linear, min_filter::linear);
+    constexpr sampler textureSampler = (mag_filter::linear, min_filter::linear, address::repeat);
     half4 colorSample;
 
     switch(int(in.textureID)) {
@@ -54,7 +54,7 @@ fragment half4 fragment_main(VertexOut in [[stage_in]], texture2d<half> colorTex
             colorSample = colorTexture.sample(textureSampler, in.uv);
             break;
         case 1:
-            colorSample = colorTexture1.sample(textureSampler, in.uv);
+            colorSample = colorTexture1.sample(textureSampler, in.uv * in.tillingFactor);
             break;
         case 2:
              colorSample = colorTexture2.sample(textureSampler, in.uv);
@@ -81,5 +81,5 @@ fragment half4 fragment_main(VertexOut in [[stage_in]], texture2d<half> colorTex
 
     }
 
-    return colorSample * (half4)in.color * in.tillingFactor; // 2
+    return colorSample * (half4)in.color; // 2
 }

@@ -175,6 +175,50 @@ void Renderer2D::DrawRotatedQuad(const glm::vec3 &position, const glm::vec2 &siz
                                  const std::shared_ptr<Texture> &texture, float tilingFactor,
                                  const glm::vec4 &tintColor) {
 
+    glm::mat4 transform = glm::translate(glm::mat4(1.0f), position) * glm::scale(glm::mat4(1.0f), {size.x, size.y, 1.0f}) *
+    glm::rotate(glm::mat4(1.0f), glm::radians(rotation), glm::vec3(0.0f, 0.0f, 1.0f));
+
+
+    constexpr size_t quadVertexCount = (size_t)4;
+
+    float textureIndex = 0.0f; // White Texture
+    constexpr glm::vec2 textureCoords[] = { {0.0f, 0.0f},
+                                            {1.0f, 0.0f},
+                                            {1.0f, 1.0f},
+                                            {0.0f, 1.0f} };
+
+    if (s_Storage.QuadIndexCount >= s_Storage.MaxQuadsIndices)
+        FlushAndReset();
+
+
+    for (uint32_t i = 0; i < s_Storage.textureSlotIndex; i++) {
+
+        if(s_Storage.textureSlots[i].get() == texture.get()) {
+            textureIndex = (float)i;
+            break;
+        }
+    }
+
+    if (textureIndex == 0.0f) {
+        if (s_Storage.textureSlotIndex >= Renderer2DStorage::MaxTextureSlots)
+            FlushAndReset();
+        textureIndex = (float)s_Storage.textureSlotIndex;
+        s_Storage.textureSlots[s_Storage.textureSlotIndex] = texture;
+        s_Storage.textureSlotIndex++;
+    }
+
+
+    for (size_t i = 0; i < quadVertexCount; i++) {
+        s_Storage.QuadVertexBufferPtr->position = transform * s_Storage.QuadVertexPositions[i];
+        s_Storage.QuadVertexBufferPtr->color = tintColor;
+        s_Storage.QuadVertexBufferPtr->uvs = textureCoords[i];
+        s_Storage.QuadVertexBufferPtr->textureID = textureIndex;
+        s_Storage.QuadVertexBufferPtr->tillingFactor = tilingFactor;
+        s_Storage.QuadVertexBufferPtr++;
+    }
+
+    s_Storage.QuadIndexCount += 6;
+
 }
 
 void Renderer2D::DrawQuad(const glm::mat4 &transform, const glm::vec4 &color) {
