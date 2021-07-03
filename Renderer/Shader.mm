@@ -9,7 +9,12 @@
 #include <glm/gtc/type_ptr.hpp>
 
 
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "err_typecheck_invalid_operands"
 Shader::Shader(const std::string &srcPath) {
+
+
+    uniformBuffer = [Renderer::GetDevice() newBufferWithBytes: &uniforms length: sizeof(uniforms) options: MTLResourceStorageModeShared];
 
     std::ifstream file;
     file.open(srcPath);
@@ -59,6 +64,14 @@ void Shader::Release() {
 
 void Shader::SetMat4(const glm::mat4 &mat) {
 
-    [Renderer::GetEncoder() setVertexBytes:glm::value_ptr(mat) length:sizeof(mat) atIndex:1];
+    uint32_t width = 1280;
+    uint32_t height = 800;
+    float aspectRatio = (float) width / (float) height;
+    float zoomLevel = 0.75f;
+    auto projectionview = glm::ortho(-aspectRatio * zoomLevel, aspectRatio * zoomLevel, -zoomLevel, zoomLevel) * glm::mat4(1.0f);
+    memcpy(uniformBuffer.contents, glm::value_ptr(mat), sizeof(projectionview));
+    [Renderer::GetEncoder() setVertexBuffer: uniformBuffer offset: 0 atIndex:1];
 
 }
+
+#pragma clang diagnostic pop

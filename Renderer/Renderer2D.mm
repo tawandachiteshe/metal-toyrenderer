@@ -14,7 +14,7 @@
 
 
 struct ToyRendererVertex {
-    glm::vec3 position;
+    glm::vec4 position;
     glm::vec4 color;
     glm::vec2 uvs;
     float textureID;
@@ -67,7 +67,7 @@ void Renderer2D::InitQuads() {
             Renderer2DStorage::MaxQuadsVertices * sizeof(ToyRendererVertex));
 
     s_Storage.quadVertexBuffer->SetLayout({
-                                                  {ShaderDataType::Float3, "position"},
+                                                  {ShaderDataType::Float4, "position"},
                                                   {ShaderDataType::Float4, "color"},
                                                   {ShaderDataType::Float2, "uvs"},
                                                   {ShaderDataType::Float1, "textureID"},
@@ -124,12 +124,11 @@ void Renderer2D::DrawQuad(const glm::vec3 &position, const glm::vec2 &size, cons
 void Renderer2D::BeginScene(const glm::mat4& transform) {
 
 
+    s_Storage.textureShader->Bind();
     s_Storage.textureShader->SetMat4(transform);
 
     s_Storage.QuadIndexCount = 0;
     s_Storage.QuadVertexBufferPtr = s_Storage.QuadVertexBufferBase;
-
-    s_Storage.textureShader->Bind();
 
 }
 

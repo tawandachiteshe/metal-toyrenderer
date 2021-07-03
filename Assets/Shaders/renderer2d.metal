@@ -6,7 +6,7 @@ struct Uniforms {
 };
 
 struct VertexIn {
-    float3 position [[attribute(0)]];
+    float4 position [[attribute(0)]];
     float4 color [[attribute(1)]];
     float2 uv [[attribute(2)]];
     float textureID [[attribute(3)]];
@@ -25,7 +25,7 @@ struct VertexOut {
 
 vertex VertexOut vertex_main(VertexIn in [[stage_in]], constant Uniforms &uniforms [[buffer(1)]]) {
     VertexOut out;
-    out.position = uniforms.projectionview * float4(in.position, 1);
+    out.position = uniforms.projectionview * in.position;
     out.color = in.color;
     out.tillingFactor = in.tillingFactor;
     out.uv = in.uv;
@@ -33,9 +33,6 @@ vertex VertexOut vertex_main(VertexIn in [[stage_in]], constant Uniforms &unifor
   return out;
 }
 
-//texture2d<half> colorTexture [[ texture(0) ]]
-    //constexpr sampler textureSampler = (mag_filter::linear, min_filter::linear);
-    //const half4 colorSample = colorTexture.sample(textureSampler, in.uv);
 
 fragment half4 fragment_main(VertexOut in [[stage_in]], texture2d<half> colorTexture [[ texture(0) ]],
                                                         texture2d<half> colorTexture1 [[ texture(1) ]],

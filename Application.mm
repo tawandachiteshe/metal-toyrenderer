@@ -2,6 +2,8 @@
 // Created by __declspec on 25/6/2021.
 //
 
+
+
 #include "Application.h"
 #import "Renderer/RenderCommand.h"
 #include <glm/gtx/transform.hpp>
@@ -22,8 +24,16 @@ void Application::Init() {
     uint32_t height = 800;
     float aspectRatio = (float) width / (float) height;
     float zoomLevel = 0.75f;
-    projectionview =
-            glm::ortho(-aspectRatio * zoomLevel, aspectRatio * zoomLevel, -zoomLevel, zoomLevel) * glm::mat4(1.0f);
+
+    glm::mat4 adjust = {
+            1.0f, 0.0f, 0.0f, 0.0f,
+            0.0f, 1.0f, 0.0f, 0.0f,
+            0.0f, 0.0f, -0.5f, -0.5f,
+            0.0f, 0.0f, 0.0f, 1.0f
+    };
+
+    projectionview = glm::ortho(-aspectRatio * zoomLevel, aspectRatio * zoomLevel, -zoomLevel, zoomLevel) * glm::mat4(1.0f) *
+                        adjust;
     window = std::make_shared<Window>();
     renderer = std::make_shared<Renderer>();
 
@@ -82,31 +92,27 @@ void Application::Render() {
     renderer->Clear(glm::vec4(0.3f, 0.3f, 0.3f, 1));
 
     glm::mat4 rotate2 =
-            projectionview * glm::rotate(glm::mat4(1.0f), glm::radians(rotate_ * 25.0f), glm::vec3(0, 0, 1));
+            projectionview * glm::rotate(glm::mat4(1.0f), glm::radians(rotate_ * 35.0f), glm::vec3(0, 0, 1));
     renderer->Clear(glm::vec4(0.3f, 0.3f, 0.3f, 1));
 
-//    texture->Bind();
-//    renderer->Submit(vertexBuffer, indexBuffer, whiteShader);
-//    renderer->BeginRender(rotate);
-//    renderer->Draw();
-//    renderer->EndRender();
-//
-//    renderer->Submit(vertexBuffer, indexBuffer, whiteShader);
-//    renderer->BeginRender(rotate2);
-//    renderer->Draw();
-//    renderer->EndRender();
+    texture->Bind();
+    renderer->Submit(vertexBuffer, indexBuffer, whiteShader);
+    renderer->BeginRender(rotate);
+    renderer->Draw();
+    renderer->EndRender();
 
-    texture->Bind(2);
-    Renderer2D::BeginScene();
-    Renderer2D::DrawRotatedQuad({0.0f, 0.0f, 1.0f}, {1.2f, 1.2f}, rotate_ * 15.0f, texture, 1000.0f, {1.0f, 1.0f, 1.0f, 1.0f});
+    texture->Bind();
+    renderer->Submit(vertexBuffer, indexBuffer, whiteShader2);
+    renderer->BeginRender(rotate2);
+    renderer->Draw();
+    renderer->EndRender();
+
+
+    Renderer2D::BeginScene(projectionview);
+    Renderer2D::DrawRotatedQuad({0.0f, 0.0f, 1.0f}, {0.5f, 0.5f}, rotate_ * 15.0f, texture, 10.0f, {1.0f, 1.0f, 1.0f, 1.0f});
     Renderer2D::EndScene();
 
 
-            //    renderer->Submit(vertexBuffer, indexBuffer, whiteShader2);
-//    renderer->BeginRender(whiteShader2);
-//    renderer->Draw(vertexBuffer, indexBuffer, rotate);
-//    renderer->Draw(vertexBuffer, indexBuffer, rotate2);
-//    renderer->EndRender();
 
 
 }

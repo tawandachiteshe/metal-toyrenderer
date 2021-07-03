@@ -83,9 +83,11 @@ void Renderer::EndRender() {
 void
 Renderer::Submit(const std::shared_ptr<VertexBuffer> &vertexBuffer, const std::shared_ptr<IndexBuffer> &indexBuffer,const std::shared_ptr<Shader>& shader) {
 
+
     this->vertexBuffer = vertexBuffer;
     this->indexBuffer = indexBuffer;
     this->shader = shader;
+    this->shader->Bind();
 }
 
 void Renderer::Draw() {

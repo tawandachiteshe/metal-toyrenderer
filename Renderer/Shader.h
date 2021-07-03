@@ -21,6 +21,13 @@ private:
     id<MTLRenderPipelineState> pipelineState = nil;
     MTLVertexDescriptor* m_VertexLayout;
     uint32_t index = 0;
+    id<MTLBuffer> uniformBuffer = nil;
+
+    struct VertexBufferUniforms {
+        glm::mat4 mat4x4 =  glm::mat4(1.0f);
+    };
+
+    VertexBufferUniforms uniforms;
 
 public:
     Shader(const std::string& srcPath);
