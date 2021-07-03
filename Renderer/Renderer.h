@@ -18,31 +18,52 @@
 class Renderer {
 
 private:
-    static id<MTLDevice> device;
-    id<MTLCommandQueue> queue = nil;
+    static id <MTLDevice> device;
+    id <MTLCommandQueue> queue = nil;
     CAMetalLayer *swapchain = nil;
     glm::vec4 clearColor;
-    id<CAMetalDrawable> surface;
-    static id<MTLCommandBuffer> commandBuffer;
+    static id <CAMetalDrawable> surface;
+    static id <MTLCommandBuffer> commandBuffer;
     static MTLRenderPassDescriptor *renderPass;
-    static id<MTLRenderCommandEncoder> encoder;
+    static id <MTLRenderCommandEncoder> encoder;
     std::shared_ptr<VertexBuffer> vertexBuffer;
     std::shared_ptr<IndexBuffer> indexBuffer;
+    std::shared_ptr<Shader> shader;
 
 public:
 
     void Init();
-    void SwapChain();
-    static id<MTLDevice> GetDevice() { return device; }
-    static id<MTLRenderCommandEncoder> GetEncoder() { return encoder; }
-    static MTLRenderPassDescriptor* GetRenderPass() { return renderPass; }
-    static id<MTLCommandBuffer> GetCommandBuffer() {return commandBuffer;}
 
-    CAMetalLayer* GetSwapChain() { return swapchain; }
+    void SwapChain();
+
+    static id <MTLDevice> GetDevice() { return device; }
+
+    static id <MTLRenderCommandEncoder> GetEncoder() { return encoder; }
+
+    static MTLRenderPassDescriptor *GetRenderPass() { return renderPass; }
+
+    static id <MTLCommandBuffer> GetCommandBuffer() { return commandBuffer; }
+
+    static id <CAMetalDrawable> GetSurface() { return surface; }
+
+    static void EndEncoding() {
+        [encoder endEncoding];
+        [commandBuffer presentDrawable:Renderer::GetSurface()];
+        [commandBuffer commit];
+    }
+
+    CAMetalLayer *GetSwapChain() { return swapchain; }
+
     void Clear(const glm::vec4 &color = glm::vec4(0.33f, 0.33f, 0.33f, 1.0f));
-    void BeginRender(const std::shared_ptr<Shader> &shader, const glm::mat4& transform = glm::mat4(1.0f));
+
+    void BeginRender(const glm::mat4 &transform=glm::mat4(1.0f));
+
     void EndRender();
-    void Submit(const std::shared_ptr<VertexBuffer>& vertexBuffer, const std::shared_ptr<IndexBuffer> &indexBuffer);
+
+    void Draw();
+
+    void Submit(const std::shared_ptr<VertexBuffer> &vertexBuffer, const std::shared_ptr<IndexBuffer> &indexBuffer,
+                const std::shared_ptr<Shader> &shader);
 
 };
 

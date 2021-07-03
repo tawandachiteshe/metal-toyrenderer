@@ -18,6 +18,7 @@ private:
     std::shared_ptr<VertexBuffer> vertexBuffer;
     std::shared_ptr<IndexBuffer> indexBuffer;
     std::shared_ptr<Shader> whiteShader;
+    std::shared_ptr<Shader> whiteShader2;
     std::shared_ptr<Texture> texture;
     glm::mat4 projectionview;
     void Render();

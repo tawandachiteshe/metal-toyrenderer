@@ -47,13 +47,14 @@ void Shader::Bind() {
     pipelineStateDescriptor.colorAttachments[0].sourceAlphaBlendFactor = MTLBlendFactorOne;
     pipelineStateDescriptor.colorAttachments[0].destinationAlphaBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
     pipelineState = [Renderer::GetDevice() newRenderPipelineStateWithDescriptor:pipelineStateDescriptor error:nil];
-    [Renderer::GetEncoder() setRenderPipelineState:pipelineState];
+
 }
 
 void Shader::Release() {
     [vertexProgram release];
     [fragmentProgram release];
     [library release];
+    [pipelineState release];
 }
 
 void Shader::SetMat4(const glm::mat4 &mat) {

@@ -30,9 +30,6 @@ VertexBuffer::VertexBuffer(void *data, uint32_t size) {
     vertexBuffer = [Renderer::GetDevice() newBufferWithBytes:data length:size options:MTLResourceOptionCPUCacheModeDefault];
 }
 
-VertexBuffer::VertexBuffer(void *data) {
-
-}
 
 void VertexBuffer::Bind() {
 
@@ -54,4 +51,16 @@ void VertexBuffer::SetLayout(const BufferLayout &layout) {
     vertexDescriptor.layouts[0].stepRate = 1;
     vertexDescriptor.layouts[0].stepFunction = MTLVertexStepFunctionPerVertex;
     vertexDescriptor.layouts[0].stride = layout.GetStride();
+}
+
+VertexBuffer::VertexBuffer(uint32_t size) {
+    vertexBuffer = [Renderer::GetDevice() newBufferWithLength: size options: MTLResourceStorageModeShared];
+}
+
+void VertexBuffer::SetData(void *data, uint32_t size) {
+
+    void* _data = vertexBuffer.contents;
+
+    memcpy(_data, data, size);
+
 }

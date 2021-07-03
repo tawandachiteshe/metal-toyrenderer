@@ -24,6 +24,7 @@ private:
 
 public:
     Shader(const std::string& srcPath);
+    id<MTLRenderPipelineState> GetPipelineState() {return pipelineState;}
     void Bind();
     void SetVertexLayout(MTLVertexDescriptor* vertexLayout) { m_VertexLayout = vertexLayout; }
     void SetMat4(const glm::mat4& mat);

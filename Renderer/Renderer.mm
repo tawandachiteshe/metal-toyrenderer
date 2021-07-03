@@ -12,6 +12,7 @@ id <MTLDevice> Renderer::device = nil;
 id <MTLRenderCommandEncoder> Renderer::encoder = nil;
 MTLRenderPassDescriptor* Renderer::renderPass = nil;
 id<MTLCommandBuffer> Renderer::commandBuffer = nil;
+id<CAMetalDrawable> Renderer::surface = nil;
 
 void Renderer::Init() {
 
@@ -52,6 +53,8 @@ void Renderer::SwapChain() {
     commandBuffer = [queue commandBuffer];
 
 
+    encoder = [Renderer::GetCommandBuffer() renderCommandEncoderWithDescriptor:Renderer::GetRenderPass()];
+
 
 }
 
@@ -61,27 +64,34 @@ void Renderer::Clear(const glm::vec4 &color) {
 
 }
 
-void Renderer::BeginRender(const std::shared_ptr<Shader> &shader, const glm::mat4& transform) {
+void Renderer::BeginRender(const glm::mat4 &transform) {
 
-    shader->Bind();
+
     shader->SetMat4(transform);
 
+
+
 }
+
+
 
 void Renderer::EndRender() {
 
-    RenderCommand::DrawIndexed(vertexBuffer, indexBuffer);
 
-    [encoder endEncoding];
-    [commandBuffer presentDrawable:surface];
-    [commandBuffer commit];
 }
 
 void
-Renderer::Submit(const std::shared_ptr<VertexBuffer> &vertexBuffer, const std::shared_ptr<IndexBuffer> &indexBuffer) {
-    encoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPass];
+Renderer::Submit(const std::shared_ptr<VertexBuffer> &vertexBuffer, const std::shared_ptr<IndexBuffer> &indexBuffer,const std::shared_ptr<Shader>& shader) {
+
     this->vertexBuffer = vertexBuffer;
     this->indexBuffer = indexBuffer;
+    this->shader = shader;
+}
+
+void Renderer::Draw() {
+
+    RenderCommand::DrawIndexed(vertexBuffer, indexBuffer, shader);
+
 }
 
 

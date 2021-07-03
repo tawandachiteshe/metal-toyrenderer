@@ -7,6 +7,7 @@
 
 #import "VertexBuffer.h"
 #import "IndexBuffer.h"
+#import "Shader.h"
 
 #include <memory>
 
@@ -16,7 +17,7 @@ private:
     static id<MTLRenderCommandEncoder> commandEncoder;
 
 public:
-    static void DrawIndexed(const std::shared_ptr<VertexBuffer>& vertexBuffer, const std::shared_ptr<IndexBuffer>& indexBuffer);
+    static void DrawIndexed(const std::shared_ptr<VertexBuffer>& vertexBuffer, const std::shared_ptr<IndexBuffer>& indexBuffer, const std::shared_ptr<Shader>& shader, uint32_t count = 0);
     static void Init();
 
 };

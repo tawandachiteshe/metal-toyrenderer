@@ -21,7 +21,10 @@ private:
 
 public:
     VertexBuffer(void* data, uint32_t size);
-    VertexBuffer(void* data);
+    VertexBuffer(uint32_t size);
+
+
+    void SetData(void* data, uint32_t size);
 
     id<MTLBuffer> GetBuffer() { return vertexBuffer; }
     MTLVertexDescriptor* GetLayout() { return vertexDescriptor; }
