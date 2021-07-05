@@ -30,5 +30,5 @@ vertex VertexOut vertex_main(VertexIn in [[stage_in]], constant Uniforms &unifor
 fragment half4 fragment_main(VertexOut in [[stage_in]], texture2d<half> colorTexture [[ texture(0) ]]) { // 1
     constexpr sampler textureSampler = (mag_filter::linear, min_filter::linear);
     const half4 colorSample = colorTexture.sample(textureSampler, in.uv);
-    return (half4)in.color;            // 2
+    return colorSample;         // 2
 }

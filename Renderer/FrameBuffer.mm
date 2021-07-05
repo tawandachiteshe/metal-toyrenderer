@@ -40,16 +40,16 @@ void FrameBuffer::Bind(uint32_t textureID) {
 
 
     MTLRenderPassDescriptor *renderPassDesc = [MTLRenderPassDescriptor renderPassDescriptor];
-    renderPassDesc.colorAttachments[0].clearColor = MTLClearColorMake(0.1f, 0.1f, 0.1f,
-                                                                      1.0f);
+    renderPassDesc.colorAttachments[0].clearColor = MTLClearColorMake(m_ClearColor.r, m_ClearColor.g, m_ClearColor.b,
+                                                                      m_ClearColor.a);
     renderPassDesc.colorAttachments[0].loadAction = MTLLoadActionClear;
     renderPassDesc.colorAttachments[0].storeAction = MTLStoreActionStore;
     renderPassDesc.colorAttachments[0].texture = m_Texture;
 
-//    renderPassDesc.depthAttachment.loadAction = MTLLoadActionClear;
-//    renderPassDesc.depthAttachment.storeAction = MTLStoreActionStore;
-//    renderPassDesc.depthAttachment.texture = m_DepthTexture;
-//    renderPassDesc.stencilAttachment.texture = m_DepthTexture;
+    renderPassDesc.depthAttachment.loadAction = MTLLoadActionClear;
+    renderPassDesc.depthAttachment.storeAction = MTLStoreActionStore;
+    renderPassDesc.depthAttachment.texture = m_DepthTexture;
+    renderPassDesc.stencilAttachment.texture = m_DepthTexture;
 
     encoder = [Renderer::GetCommandBuffer() renderCommandEncoderWithDescriptor:renderPassDesc];
     [renderPassDesc release];

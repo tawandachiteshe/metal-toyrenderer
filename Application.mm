@@ -103,20 +103,30 @@ void Application::Render() {
     RenderCommand::SetCommandEncoder(Renderer::GetEncoder());
     Renderer2D::BeginScene(projectionview);
     Renderer2D::DrawRotatedQuad({0.0f, 0.0f, 1.0f}, {1.0f, 1.0f}, rotate_ * 25.0f, texture, 10.0f, {1.0f, 1.0f, 1.0f, 1.0f});
-    Renderer2D::DrawRotatedQuad({0.0f, 0.5f, 1.0f}, {1.0f, 1.0f}, 0, texture2, 1.0f, {1.0f, 1.0f, 1.0f, 1.0f});
+    Renderer2D::DrawRotatedQuad({0.0f, 0.5f, 1.0f}, {1.0f, 1.0f}, 0.0f, texture2, 1.0f, {1.0f, 1.0f, 1.0f, 1.0f});
     Renderer2D::EndScene();
     RenderCommand::EndCommandEncoder();
 
 
+
+
     framebuffer->Bind();
+    framebuffer->SetClearColor({1.0f, 0.0f, 0.0f, 1.0f});
 
     RenderCommand::SetCommandEncoder(framebuffer->GetEncoder());
     texture->Bind();
     renderer->Submit(vertexBuffer, indexBuffer, whiteShader);
-    renderer->BeginRender(glm::mat4(1.0f));
+    renderer->BeginRender(rotate);
     renderer->Draw();
     renderer->EndRender();
     RenderCommand::EndCommandEncoder();
+
+//    RenderCommand::SetCommandEncoder(framebuffer->GetEncoder());
+//    Renderer2D::BeginScene(projectionview);
+//    Renderer2D::DrawRotatedQuad({0.0f, 0.0f, 1.0f}, {1.0f, 1.0f}, rotate_ * 25.0f, texture, 10.0f, {1.0f, 1.0f, 1.0f, 1.0f});
+//    Renderer2D::DrawRotatedQuad({0.0f, 0.5f, 1.0f}, {1.0f, 1.0f}, 90.0f, texture2, 1.0f, {1.0f, 1.0f, 1.0f, 1.0f});
+//    Renderer2D::EndScene();
+//    RenderCommand::EndCommandEncoder();
 
 
 }

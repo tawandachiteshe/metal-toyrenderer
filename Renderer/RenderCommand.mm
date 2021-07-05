@@ -36,5 +36,6 @@ id <MTLRenderCommandEncoder> RenderCommand::GetCommandEncoder() {
 
 void RenderCommand::EndCommandEncoder() {
     [commandEncoder endEncoding];
+    [commandEncoder release];
 }
 
