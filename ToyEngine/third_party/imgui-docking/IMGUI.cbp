@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="IMGUI"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\ToyEngine\;CMake Files\..\ToyEngine\third_party\;CMake Files\..\ToyEngine\third_party\glfw\;CMake Files\..\ToyEngine\third_party\glfw\src\;CMake Files\..\ToyEngine\third_party\glfw\examples\;CMake Files\..\ToyEngine\third_party\glfw\CMake\;CMake Files\..\ToyEngine\third_party\glfw\tests\;CMake Files\..\ToyEngine\third_party\imgui-docking\;CMake Files\..\ToyEngine\third_party\glm\;CMake Files\..\ToyEngine\third_party\glm\glm\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IMGUI">
+				<Option output="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/libIMGUI.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/../glfw/include"/>
+					<Add directory="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/Makefile&quot;  VERBOSE=1 IMGUI"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IMGUI/fast">
+				<Option output="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/libIMGUI.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/../glfw/include"/>
+					<Add directory="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/Makefile&quot;  VERBOSE=1 IMGUI/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/backends/imgui_impl_glfw.cpp">
+			<Option target="IMGUI"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/backends/imgui_impl_glfw.h">
+			<Option target="IMGUI"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/backends/imgui_impl_metal.h">
+			<Option target="IMGUI"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/backends/imgui_impl_metal.mm">
+			<Option target="IMGUI"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/imconfig.h">
+			<Option target="IMGUI"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/imgui.cpp">
+			<Option target="IMGUI"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/imgui.h">
+			<Option target="IMGUI"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/imgui_demo.cpp">
+			<Option target="IMGUI"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/imgui_draw.cpp">
+			<Option target="IMGUI"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/imgui-docking/imgui_tables.cpp">
+			<Option target="IMGUI"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/../ToyEngine/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\..\ToyEngine\"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/../ToyEngine/third_party/glfw/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\..\ToyEngine\third_party\glfw\"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/../ToyEngine/third_party/glfw/cmake_uninstall.cmake.in">
+			<Option virtualFolder="CMake Files\..\ToyEngine\third_party\glfw\"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/../ToyEngine/third_party/glfw/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\..\ToyEngine\third_party\glfw\src\"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/../ToyEngine/third_party/glfw/src/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\..\ToyEngine\third_party\glfw\src\"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/../ToyEngine/third_party/glfw/src/glfw3Config.cmake.in">
+			<Option virtualFolder="CMake Files\..\ToyEngine\third_party\glfw\src\"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/../ToyEngine/third_party/glfw/src/glfw_config.h.in">
+			<Option virtualFolder="CMake Files\..\ToyEngine\third_party\glfw\src\"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/../ToyEngine/third_party/glfw/examples/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\..\ToyEngine\third_party\glfw\examples\"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/../ToyEngine/third_party/glfw/CMake/MacOSXBundleInfo.plist.in">
+			<Option virtualFolder="CMake Files\..\ToyEngine\third_party\glfw\CMake\"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/../ToyEngine/third_party/glfw/tests/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\..\ToyEngine\third_party\glfw\tests\"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/../ToyEngine/third_party/imgui-docking/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\..\ToyEngine\third_party\imgui-docking\"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/../ToyEngine/third_party/glm/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\..\ToyEngine\third_party\glm\"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/../ToyEngine/third_party/glm/glm/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\..\ToyEngine\third_party\glm\glm\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
