@@ -9,6 +9,7 @@
 
 
 id <MTLDevice> Renderer::device = nil;
+bool Renderer::isMainFrame = true;
 id <MTLRenderCommandEncoder> Renderer::encoder = nil;
 MTLRenderPassDescriptor* Renderer::renderPass = nil;
 id<MTLCommandBuffer> Renderer::commandBuffer = nil;
@@ -20,7 +21,7 @@ void Renderer::Init() {
     queue = [device newCommandQueue];
     swapchain = [CAMetalLayer layer];
     swapchain.pixelFormat = MTLPixelFormatBGRA8Unorm;
-    swapchain.framebufferOnly = YES;
+    swapchain.framebufferOnly = NO;
     swapchain.device = device;
     swapchain.opaque = YES;
 
@@ -50,10 +51,12 @@ void Renderer::SwapChain() {
     renderPass.colorAttachments[0].storeAction = MTLStoreActionStore;
     renderPass.colorAttachments[0].texture = surface.texture;
 
+    auto texture_s = surface.texture;
+
     commandBuffer = [queue commandBuffer];
 
 
-    encoder = [Renderer::GetCommandBuffer() renderCommandEncoderWithDescriptor:Renderer::GetRenderPass()];
+    encoder = [commandBuffer renderCommandEncoderWithDescriptor:Renderer::GetRenderPass()];
 
 
 }
@@ -94,6 +97,20 @@ void Renderer::Draw() {
 
     RenderCommand::DrawIndexed(vertexBuffer, indexBuffer, shader);
 
+}
+
+void Renderer::SetEncoder(id <MTLRenderCommandEncoder> commandEncoder) {
+
+    encoder = commandEncoder;
+
+}
+
+void Renderer::SetIsMainFrame(bool isMainFrame) {
+    Renderer::isMainFrame = isMainFrame;
+}
+
+bool Renderer::GetIsMainFrame() {
+    return isMainFrame;
 }
 
 

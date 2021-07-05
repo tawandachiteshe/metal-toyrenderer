@@ -17,6 +17,13 @@ private:
     static id<MTLRenderCommandEncoder> commandEncoder;
 
 public:
+    static id <MTLRenderCommandEncoder> GetCommandEncoder();
+
+public:
+    static void SetCommandEncoder(id <MTLRenderCommandEncoder> encoder);
+    static void EndCommandEncoder();
+
+public:
     static void DrawIndexed(const std::shared_ptr<VertexBuffer>& vertexBuffer, const std::shared_ptr<IndexBuffer>& indexBuffer, const std::shared_ptr<Shader>& shader, uint32_t count = 0);
     static void Init();
 

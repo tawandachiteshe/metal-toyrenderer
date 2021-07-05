@@ -28,12 +28,13 @@ void Application::Init() {
     glm::mat4 adjust = {
             1.0f, 0.0f, 0.0f, 0.0f,
             0.0f, 1.0f, 0.0f, 0.0f,
-            0.0f, 0.0f, -0.5f, -0.5f,
+            0.0f, 0.0f, -0.5f, 0.5f,
             0.0f, 0.0f, 0.0f, 1.0f
     };
 
-    projectionview = glm::ortho(-aspectRatio * zoomLevel, aspectRatio * zoomLevel, -zoomLevel, zoomLevel) * glm::mat4(1.0f) *
-                        adjust;
+    projectionview =
+            glm::ortho(-aspectRatio * zoomLevel, aspectRatio * zoomLevel, -zoomLevel, zoomLevel) * glm::mat4(1.0f) *
+            adjust;
     window = std::make_shared<Window>();
     renderer = std::make_shared<Renderer>();
 
@@ -50,7 +51,7 @@ void Application::Init() {
     };
 
     texture = std::make_shared<Texture>("Assets/textures/waifu.png");
-
+    texture2 = std::make_shared<Texture>(800, 600);
 
 
     vertexBuffer = std::make_shared<VertexBuffer>(sizeof(positions));
@@ -68,19 +69,32 @@ void Application::Init() {
     whiteShader2->SetVertexLayout(vertexBuffer->GetLayout());
 
     Renderer2D::Init();
+
+    framebuffer = std::make_shared<FrameBuffer>(800, 600);
+
+    MTLRegion region = {
+            {0,                              0,                               0},                   // MTLOrigin
+            {static_cast<NSUInteger>(width), static_cast<NSUInteger>(height), 1} // MTLSize
+    };
+
+
+    char *dta_ = (char *) malloc(width * height * 4);
+    NSUInteger bytesPerRow = static_cast<NSUInteger>(4 * width);
+    [Renderer::GetSurface().texture getBytes:dta_ bytesPerRow:bytesPerRow fromRegion:region mipmapLevel:0];
+
+    char *dta2 = dta_;
+
+    texture2->SetData((void *) dta_, 0);
 }
 
 void Application::Run() {
 
     while (window->IsWindowOpen()) {
         window->PollEvents();
-        @autoreleasepool {
 
-            renderer->SwapChain();
-            Render();
-            renderer->EndEncoding();
-
-        }
+        renderer->SwapChain();
+        Render();
+        renderer->Present();
     }
 
 }
@@ -93,26 +107,42 @@ void Application::Render() {
 
     glm::mat4 rotate2 =
             projectionview * glm::rotate(glm::mat4(1.0f), glm::radians(rotate_ * 35.0f), glm::vec3(0, 0, 1));
+
     renderer->Clear(glm::vec4(0.3f, 0.3f, 0.3f, 1));
 
+
+
+    RenderCommand::SetCommandEncoder(Renderer::GetEncoder());
+    Renderer2D::BeginScene(projectionview);
+    Renderer2D::DrawRotatedQuad({1.0f, 0.0f, 1.0f}, {1.0f, 1.0f}, rotate_ * 25.0f, texture, 10.0f, {1.0f, 1.0f, 1.0f, 1.0f});
+    Renderer2D::DrawRotatedQuad({0.0f, 0.5f, 1.0f}, {1.0f, 1.0f}, 0, texture2, 1.0f, {1.0f, 1.0f, 1.0f, 1.0f});
+    Renderer2D::EndScene();
+    RenderCommand::EndCommandEncoder();
+
+
+    framebuffer->Bind();
+
+    MTLRegion region = {
+            {0,                            0,                            0},                   // MTLOrigin
+            {static_cast<NSUInteger>(800), static_cast<NSUInteger>(600), 1} // MTLSize
+    };
+
+
+    char* data_ = new char[800 * 600 * 4];
+    NSUInteger bytesPerRow = static_cast<NSUInteger>(4 * 600);
+    [framebuffer->GetTexture() getBytes:data_ bytesPerRow:bytesPerRow fromRegion:region mipmapLevel:0];
+
+    texture2->SetData((void *) data_, 0);
+    delete[] data_;
+
+
+    RenderCommand::SetCommandEncoder(framebuffer->GetEncoder());
     texture->Bind();
     renderer->Submit(vertexBuffer, indexBuffer, whiteShader);
     renderer->BeginRender(rotate);
     renderer->Draw();
     renderer->EndRender();
-
-    texture->Bind();
-    renderer->Submit(vertexBuffer, indexBuffer, whiteShader2);
-    renderer->BeginRender(rotate2);
-    renderer->Draw();
-    renderer->EndRender();
-
-
-    Renderer2D::BeginScene(projectionview);
-    Renderer2D::DrawRotatedQuad({0.0f, 0.0f, 1.0f}, {0.5f, 0.5f}, rotate_ * 15.0f, texture, 10.0f, {1.0f, 1.0f, 1.0f, 1.0f});
-    Renderer2D::EndScene();
-
-
+    RenderCommand::EndCommandEncoder();
 
 
 }

@@ -14,6 +14,7 @@
 #import "Shader.h"
 #import "IndexBuffer.h"
 #include <memory>
+#import "RenderCommand.h"
 
 class Renderer {
 
@@ -26,6 +27,14 @@ private:
     static id <MTLCommandBuffer> commandBuffer;
     static MTLRenderPassDescriptor *renderPass;
     static id <MTLRenderCommandEncoder> encoder;
+    static bool isMainFrame;
+public:
+    static bool GetIsMainFrame();
+
+public:
+    static void SetIsMainFrame(bool isMainFrame);
+
+private:
     std::shared_ptr<VertexBuffer> vertexBuffer;
     std::shared_ptr<IndexBuffer> indexBuffer;
     std::shared_ptr<Shader> shader;
@@ -33,6 +42,12 @@ private:
 public:
 
     void Init();
+
+    void Present() {
+        [commandBuffer presentDrawable:surface];
+        [commandBuffer commit];
+        [commandBuffer waitUntilCompleted];
+    }
 
     void SwapChain();
 
@@ -42,15 +57,12 @@ public:
 
     static MTLRenderPassDescriptor *GetRenderPass() { return renderPass; }
 
-    static id <MTLCommandBuffer> GetCommandBuffer() { return commandBuffer; }
+    static id <MTLCommandBuffer> GetCommandBuffer() { Renderer::isMainFrame = true; return commandBuffer; }
 
     static id <CAMetalDrawable> GetSurface() { return surface; }
 
-    static void EndEncoding() {
-        [encoder endEncoding];
-        [commandBuffer presentDrawable:Renderer::GetSurface()];
-        [commandBuffer commit];
-    }
+    static void SetEncoder(id <MTLRenderCommandEncoder> commandEncoder);
+
 
     CAMetalLayer *GetSwapChain() { return swapchain; }
 

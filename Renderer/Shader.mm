@@ -7,6 +7,7 @@
 #include "Shader.h"
 #import "Renderer.h"
 #include <glm/gtc/type_ptr.hpp>
+#import "RenderCommand.h"
 
 
 #pragma clang diagnostic push
@@ -70,7 +71,7 @@ void Shader::SetMat4(const glm::mat4 &mat) {
     float zoomLevel = 0.75f;
     auto projectionview = glm::ortho(-aspectRatio * zoomLevel, aspectRatio * zoomLevel, -zoomLevel, zoomLevel) * glm::mat4(1.0f);
     memcpy(uniformBuffer.contents, glm::value_ptr(mat), sizeof(projectionview));
-    [Renderer::GetEncoder() setVertexBuffer: uniformBuffer offset: 0 atIndex:1];
+    [RenderCommand::GetCommandEncoder() setVertexBuffer: uniformBuffer offset: 0 atIndex:1];
 
 }
 

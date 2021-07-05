@@ -6,6 +6,7 @@
 #import "../third_party/stb_image.h"
 #import "Renderer.h"
 #import <Metal/Metal.h>
+#import "RenderCommand.h"
 
 Texture::Texture(const std::string &filePath) : filePath(filePath)
 {
@@ -33,11 +34,18 @@ Texture::Texture(const std::string &filePath) : filePath(filePath)
                mipmapLevel:0
                  withBytes:(const void*)data
                bytesPerRow:bytesPerRow];
+
+    char* dta_ = (char*)malloc(width * height * 4);
+    [m_Texture getBytes:dta_ bytesPerRow: bytesPerRow fromRegion:region mipmapLevel:0];
+
+    char* dta2 = dta_;
+
+
 }
 
 void Texture::Bind(uint32_t texId) {
     textureID = texId;
-    [Renderer::GetEncoder() setFragmentTexture:m_Texture atIndex:texId];
+    [RenderCommand::GetCommandEncoder() setFragmentTexture:m_Texture atIndex:texId];
 }
 
 Texture::Texture(uint32_t width, uint32_t height) :

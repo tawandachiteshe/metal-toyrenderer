@@ -9,6 +9,7 @@
 #import "Renderer/Renderer.h"
 #import "Renderer/IndexBuffer.h"
 #import "Renderer/Texture.h"
+#import "Renderer/FrameBuffer.h"
 
 class Application {
 
@@ -20,6 +21,8 @@ private:
     std::shared_ptr<Shader> whiteShader;
     std::shared_ptr<Shader> whiteShader2;
     std::shared_ptr<Texture> texture;
+    std::shared_ptr<Texture> texture2;
+    std::shared_ptr<FrameBuffer> framebuffer;
     glm::mat4 projectionview;
     void Render();
 

@@ -22,7 +22,7 @@ add_executable(
         third_party/stb_image.mm
         Renderer/Renderer2D.h
         Renderer/Renderer2D.mm
-        Application.mm Application.h Renderer/Renderer.mm Renderer/Renderer.h Window/Window.mm Window/Window.h Renderer/VertexBuffer.mm Renderer/VertexBuffer.h Renderer/Shader.mm Renderer/Shader.h Renderer/BufferLayout.h Renderer/IndexBuffer.mm Renderer/IndexBuffer.h Renderer/RenderCommand.mm Renderer/RenderCommand.h Renderer/Texture.mm Renderer/Texture.h)
+        Application.mm Application.h Renderer/Renderer.mm Renderer/Renderer.h Window/Window.mm Window/Window.h Renderer/VertexBuffer.mm Renderer/VertexBuffer.h Renderer/Shader.mm Renderer/Shader.h Renderer/BufferLayout.h Renderer/IndexBuffer.mm Renderer/IndexBuffer.h Renderer/RenderCommand.mm Renderer/RenderCommand.h Renderer/Texture.mm Renderer/Texture.h Renderer/FrameBuffer.mm Renderer/FrameBuffer.h)
 
 # 🔗 Link CrossWindow to your project:
 

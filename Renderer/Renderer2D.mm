@@ -11,6 +11,7 @@
 #import "Texture.h"
 #import "Shader.h"
 #import "RenderCommand.h"
+#import "Renderer.h"
 
 
 struct ToyRendererVertex {
@@ -123,7 +124,6 @@ void Renderer2D::DrawQuad(const glm::vec3 &position, const glm::vec2 &size, cons
 
 void Renderer2D::BeginScene(const glm::mat4& transform) {
 
-
     s_Storage.textureShader->Bind();
     s_Storage.textureShader->SetMat4(transform);
 
@@ -138,7 +138,6 @@ void Renderer2D::Flush() {
 
     if (s_Storage.QuadIndexCount != 0) {
         RenderCommand::DrawIndexed(s_Storage.quadVertexBuffer, s_Storage.indexBuffer, s_Storage.textureShader,s_Storage.QuadIndexCount);
-
     }
 
 }
