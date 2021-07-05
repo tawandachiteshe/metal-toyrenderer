@@ -14,6 +14,7 @@ class FrameBuffer {
 private:
     uint32_t m_Width, m_Height = 0;
     id<MTLTexture> m_Texture = nil;
+    id<MTLTexture> m_DepthTexture = nil;
 public:
     id <MTLTexture> GetTexture() const;
 

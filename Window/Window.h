@@ -9,6 +9,7 @@
 #define GLFW_EXPOSE_NATIVE_COCOA
 #include <GLFW/glfw3.h>
 #include <GLFW/glfw3native.h>
+#import <utility>
 
 static void quit(GLFWwindow *window, int key, int scancode, int action, int mods)
 {
@@ -22,8 +23,10 @@ static void quit(GLFWwindow *window, int key, int scancode, int action, int mods
 class Window {
 
 private:
-    GLFWwindow *window = nullptr;
+    static GLFWwindow *window;
+    static std::pair<uint32_t, uint32_t> windowSize;
 public:
+    static std::pair<uint32_t, uint32_t>& GetWindowSize();
     void Init(void *swapchain);
     GLFWwindow* GetWindow() { return window; }
     void PollEvents();

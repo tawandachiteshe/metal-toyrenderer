@@ -4,11 +4,13 @@
 
 #include "RenderCommand.h"
 #import "Renderer.h"
+#import "../Window/Window.h"
 
 id<MTLRenderCommandEncoder> RenderCommand::commandEncoder = nil;
 
 void RenderCommand::DrawIndexed(const std::shared_ptr<VertexBuffer> &vertexBuffer,
                                 const std::shared_ptr<IndexBuffer> &indexBuffer, const std::shared_ptr<Shader>& shader, uint32_t count) {
+
 
     [commandEncoder setRenderPipelineState:shader->GetPipelineState()];
 

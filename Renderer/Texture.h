@@ -13,12 +13,19 @@ class Texture {
 private:
     std::string filePath;
     id<MTLTexture> m_Texture = nil;
+public:
+    void SetTexture(id <MTLTexture> mTexture) {
+        m_Texture = mTexture;
+    }
+
+private:
     uint32_t textureID = 0;
     int32_t m_Width, m_Height = 0;
 
 public:
     uint32_t GetTextureID() {return textureID;}
     Texture(const std::string &filePath);
+
     Texture(uint32_t width, uint32_t height);
     void SetData(void* data, uint32_t size);
     void Bind(uint32_t texId = 0);

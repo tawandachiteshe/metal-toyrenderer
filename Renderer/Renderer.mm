@@ -5,8 +5,9 @@
 #include "Renderer.h"
 #import "Shader.h"
 #include <iostream>
+#import <GLFW/glfw3.h>
 #include "RenderCommand.h"
-
+#import "../Window/Window.h"
 
 id <MTLDevice> Renderer::device = nil;
 bool Renderer::isMainFrame = true;
@@ -26,19 +27,6 @@ void Renderer::Init() {
     swapchain.opaque = YES;
 
 
-    MTLViewport viewport =
-            {
-                    .originX = 0.0,
-                    .originY = 0.0,
-                    .width = 1280,
-                    .height = 800,
-                    .znear = 0.0,
-                    .zfar = 1.0
-            };
-    [encoder setViewport:viewport];
-
-
-
 }
 
 void Renderer::SwapChain() {
@@ -55,7 +43,6 @@ void Renderer::SwapChain() {
 
     commandBuffer = [queue commandBuffer];
 
-
     encoder = [commandBuffer renderCommandEncoderWithDescriptor:Renderer::GetRenderPass()];
 
 
@@ -69,14 +56,9 @@ void Renderer::Clear(const glm::vec4 &color) {
 
 void Renderer::BeginRender(const glm::mat4 &transform) {
 
-
     shader->SetMat4(transform);
 
-
-
 }
-
-
 
 void Renderer::EndRender() {
 

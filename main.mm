@@ -6,14 +6,9 @@ int main(void)
 {
 
     Application app;
+    app.Init();
+    app.Run();
 
-    @autoreleasepool {
-
-        app.Init();
-
-        app.Run();
-
-    }
 
     return 0;
 }

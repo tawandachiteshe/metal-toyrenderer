@@ -5,6 +5,8 @@
 #include "Window.h"
 #import <QuartzCore/QuartzCore.h>
 
+std::pair<uint32_t, uint32_t> Window::windowSize;
+GLFWwindow* Window::window = nullptr;
 
 void Window::Init(void *swapchain) {
     glfwInit();
@@ -29,5 +31,12 @@ void Window::Release() {
 
 Window::~Window() {
     Release();
+}
+
+std::pair<uint32_t, uint32_t> &Window::GetWindowSize() {
+    int width, height;
+    glfwGetFramebufferSize(window,&width, &height);
+    Window::windowSize = std::pair<u_int32_t, uint32_t>(width, height);
+    return Window::windowSize;
 }
 
