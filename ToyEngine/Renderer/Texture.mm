@@ -7,6 +7,7 @@
 #import "Renderer.h"
 #import <Metal/Metal.h>
 #import "RenderCommand.h"
+#import "InitMetal.h"
 
 Texture::Texture(const std::string &filePath) : filePath(filePath)
 {
@@ -23,7 +24,7 @@ Texture::Texture(const std::string &filePath) : filePath(filePath)
 
     NSUInteger bytesPerRow = static_cast<NSUInteger>(4 * width);
 
-    m_Texture = [Renderer::GetDevice() newTextureWithDescriptor:textureDescriptor];
+    m_Texture = [InitMetal::GetDevice()  newTextureWithDescriptor:textureDescriptor];
     MTLRegion region = {
             { 0, 0, 0 },                   // MTLOrigin
             {static_cast<NSUInteger>(width), static_cast<NSUInteger>(height), 1} // MTLSize
@@ -45,7 +46,7 @@ Texture::Texture(const std::string &filePath) : filePath(filePath)
 
 void Texture::Bind(uint32_t texId) {
     textureID = texId;
-    [RenderCommand::GetCommandEncoder() setFragmentTexture:m_Texture atIndex:texId];
+    [InitMetal::GetCommandEncoder() setFragmentTexture:m_Texture atIndex:texId];
 }
 
 Texture::Texture(uint32_t width, uint32_t height) :
@@ -60,7 +61,7 @@ m_Height(height), m_Width(width)
 
     NSUInteger bytesPerRow = static_cast<NSUInteger>(4 * width);
 
-    m_Texture = [Renderer::GetDevice() newTextureWithDescriptor:textureDescriptor];
+    m_Texture = [InitMetal::GetDevice() newTextureWithDescriptor:textureDescriptor];
     MTLRegion region = {
             { 0, 0, 0 },                   // MTLOrigin
             {static_cast<NSUInteger>(width), static_cast<NSUInteger>(height), 1} // MTLSize

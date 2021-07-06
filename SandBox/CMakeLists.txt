@@ -6,7 +6,7 @@ set(TOY_ENGINE_DIR ${PROJECT_SOURCE_DIR}/../ToyEngine)
 add_subdirectory(${TOY_ENGINE_DIR} ${TOY_ENGINE_DIR}/bin)
 
 add_executable(${PROJECT_NAME}
-        SandBox2D.cpp
+        SandBox2D.mm
         SandBox2D.h
         SandboxApp.mm
         )

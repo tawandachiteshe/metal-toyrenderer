@@ -2,9 +2,18 @@
 // Created by __declspec on 5/7/2021.
 //
 
+#include <Renderer/RenderCommand.h>
 #include "SandBox2D.h"
+#include "imgui.h"
+
+static float frameTime = 0.0f;
 
 void SandBox2D::OnImGuiRender() {
+
+    ImGui::Begin("Tawanda");
+    ImGui::Text("Frame time %f", frameTime);
+    ImGui::Text("FPS %f", (1000.0f / frameTime));
+    ImGui::End();
 
 }
 
@@ -17,6 +26,9 @@ void SandBox2D::OnDetach() {
 }
 
 void SandBox2D::OnUpdate(Timestep ts) {
+    frameTime = ts.GetMilliseconds();
+    //if u dont clear doesnt work
+    RenderCommand::Clear({1.0f, 0.0f, 0.0f, 1.0f});
 
 }
 

@@ -4,9 +4,10 @@
 
 #include "IndexBuffer.h"
 #import "Renderer.h"
+#import "InitMetal.h"
 
 IndexBuffer::IndexBuffer(uint32_t *data, uint32_t count): count(count) {
 
-    indexBuffer = [Renderer::GetDevice() newBufferWithBytes:data length:sizeof(uint32_t) * count options:MTLResourceOptionCPUCacheModeDefault];
+    indexBuffer = [InitMetal::GetDevice() newBufferWithBytes:data length:sizeof(uint32_t) * count options:MTLResourceOptionCPUCacheModeDefault];
 
 }

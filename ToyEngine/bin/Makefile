@@ -460,6 +460,33 @@ Renderer/IndexBuffer.mm.s:
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug && $(MAKE) $(MAKESILENT) -f /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/build.make /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/IndexBuffer.mm.s
 .PHONY : Renderer/IndexBuffer.mm.s
 
+Renderer/InitMetal.o: Renderer/InitMetal.mm.o
+
+.PHONY : Renderer/InitMetal.o
+
+# target to build an object file
+Renderer/InitMetal.mm.o:
+	cd /Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug && $(MAKE) $(MAKESILENT) -f /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/build.make /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/InitMetal.mm.o
+.PHONY : Renderer/InitMetal.mm.o
+
+Renderer/InitMetal.i: Renderer/InitMetal.mm.i
+
+.PHONY : Renderer/InitMetal.i
+
+# target to preprocess a source file
+Renderer/InitMetal.mm.i:
+	cd /Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug && $(MAKE) $(MAKESILENT) -f /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/build.make /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/InitMetal.mm.i
+.PHONY : Renderer/InitMetal.mm.i
+
+Renderer/InitMetal.s: Renderer/InitMetal.mm.s
+
+.PHONY : Renderer/InitMetal.s
+
+# target to generate assembly for a file
+Renderer/InitMetal.mm.s:
+	cd /Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug && $(MAKE) $(MAKESILENT) -f /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/build.make /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/InitMetal.mm.s
+.PHONY : Renderer/InitMetal.mm.s
+
 Renderer/OrthoCamera.o: Renderer/OrthoCamera.mm.o
 
 .PHONY : Renderer/OrthoCamera.o
@@ -621,6 +648,33 @@ Renderer/Shader.s: Renderer/Shader.mm.s
 Renderer/Shader.mm.s:
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug && $(MAKE) $(MAKESILENT) -f /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/build.make /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Shader.mm.s
 .PHONY : Renderer/Shader.mm.s
+
+Renderer/Swapchain.o: Renderer/Swapchain.mm.o
+
+.PHONY : Renderer/Swapchain.o
+
+# target to build an object file
+Renderer/Swapchain.mm.o:
+	cd /Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug && $(MAKE) $(MAKESILENT) -f /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/build.make /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Swapchain.mm.o
+.PHONY : Renderer/Swapchain.mm.o
+
+Renderer/Swapchain.i: Renderer/Swapchain.mm.i
+
+.PHONY : Renderer/Swapchain.i
+
+# target to preprocess a source file
+Renderer/Swapchain.mm.i:
+	cd /Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug && $(MAKE) $(MAKESILENT) -f /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/build.make /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Swapchain.mm.i
+.PHONY : Renderer/Swapchain.mm.i
+
+Renderer/Swapchain.s: Renderer/Swapchain.mm.s
+
+.PHONY : Renderer/Swapchain.s
+
+# target to generate assembly for a file
+Renderer/Swapchain.mm.s:
+	cd /Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug && $(MAKE) $(MAKESILENT) -f /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/build.make /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Swapchain.mm.s
+.PHONY : Renderer/Swapchain.mm.s
 
 Renderer/Texture.o: Renderer/Texture.mm.o
 
@@ -800,6 +854,9 @@ help:
 	@echo "... Renderer/IndexBuffer.o"
 	@echo "... Renderer/IndexBuffer.i"
 	@echo "... Renderer/IndexBuffer.s"
+	@echo "... Renderer/InitMetal.o"
+	@echo "... Renderer/InitMetal.i"
+	@echo "... Renderer/InitMetal.s"
 	@echo "... Renderer/OrthoCamera.o"
 	@echo "... Renderer/OrthoCamera.i"
 	@echo "... Renderer/OrthoCamera.s"
@@ -818,6 +875,9 @@ help:
 	@echo "... Renderer/Shader.o"
 	@echo "... Renderer/Shader.i"
 	@echo "... Renderer/Shader.s"
+	@echo "... Renderer/Swapchain.o"
+	@echo "... Renderer/Swapchain.i"
+	@echo "... Renderer/Swapchain.s"
 	@echo "... Renderer/Texture.o"
 	@echo "... Renderer/Texture.i"
 	@echo "... Renderer/Texture.s"

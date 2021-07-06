@@ -76,9 +76,35 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 # Include the compile flags for this target's objects.
 include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 
+/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Swapchain.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
+/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Swapchain.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/Swapchain.mm
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Swapchain.mm.o"
+	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Renderer/Swapchain.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/Swapchain.mm
+
+/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Swapchain.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MTLToyGameEngine.dir/Renderer/Swapchain.mm.i"
+	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/Swapchain.mm > CMakeFiles/MTLToyGameEngine.dir/Renderer/Swapchain.mm.i
+
+/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Swapchain.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MTLToyGameEngine.dir/Renderer/Swapchain.mm.s"
+	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/Swapchain.mm -o CMakeFiles/MTLToyGameEngine.dir/Renderer/Swapchain.mm.s
+
+/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/InitMetal.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
+/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/InitMetal.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/InitMetal.mm
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/InitMetal.mm.o"
+	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Renderer/InitMetal.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/InitMetal.mm
+
+/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/InitMetal.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MTLToyGameEngine.dir/Renderer/InitMetal.mm.i"
+	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/InitMetal.mm > CMakeFiles/MTLToyGameEngine.dir/Renderer/InitMetal.mm.i
+
+/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/InitMetal.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MTLToyGameEngine.dir/Renderer/InitMetal.mm.s"
+	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/InitMetal.mm -o CMakeFiles/MTLToyGameEngine.dir/Renderer/InitMetal.mm.s
+
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/third_party/stb_image.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/third_party/stb_image.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/stb_image.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/third_party/stb_image.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/third_party/stb_image.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/third_party/stb_image.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/third_party/stb_image.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/third_party/stb_image.mm.i: cmake_force
@@ -91,7 +117,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Renderer2D.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Renderer2D.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/Renderer2D.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Renderer2D.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Renderer2D.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Renderer/Renderer2D.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/Renderer2D.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Renderer2D.mm.i: cmake_force
@@ -104,7 +130,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Renderer.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Renderer.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/Renderer.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Renderer.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Renderer.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Renderer/Renderer.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/Renderer.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Renderer.mm.i: cmake_force
@@ -117,7 +143,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Window/Window.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Window/Window.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Window/Window.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Window/Window.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Window/Window.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Window/Window.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Window/Window.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Window/Window.mm.i: cmake_force
@@ -130,7 +156,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/VertexBuffer.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/VertexBuffer.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/VertexBuffer.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/VertexBuffer.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/VertexBuffer.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Renderer/VertexBuffer.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/VertexBuffer.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/VertexBuffer.mm.i: cmake_force
@@ -143,7 +169,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Shader.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Shader.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/Shader.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Shader.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Shader.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Renderer/Shader.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/Shader.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Shader.mm.i: cmake_force
@@ -156,7 +182,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/IndexBuffer.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/IndexBuffer.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/IndexBuffer.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/IndexBuffer.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/IndexBuffer.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Renderer/IndexBuffer.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/IndexBuffer.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/IndexBuffer.mm.i: cmake_force
@@ -169,7 +195,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/RenderCommand.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/RenderCommand.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/RenderCommand.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/RenderCommand.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/RenderCommand.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Renderer/RenderCommand.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/RenderCommand.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/RenderCommand.mm.i: cmake_force
@@ -182,7 +208,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Texture.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Texture.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/Texture.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Texture.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Texture.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Renderer/Texture.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/Texture.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Texture.mm.i: cmake_force
@@ -195,7 +221,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/FrameBuffer.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/FrameBuffer.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/FrameBuffer.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/FrameBuffer.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/FrameBuffer.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Renderer/FrameBuffer.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/FrameBuffer.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/FrameBuffer.mm.i: cmake_force
@@ -208,7 +234,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/IMGUI/ImGuiDock.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/IMGUI/ImGuiDock.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/IMGUI/ImGuiDock.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/IMGUI/ImGuiDock.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/IMGUI/ImGuiDock.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Renderer/IMGUI/ImGuiDock.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/IMGUI/ImGuiDock.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/IMGUI/ImGuiDock.mm.i: cmake_force
@@ -221,7 +247,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/IMGUI/ImGuiLayer.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/IMGUI/ImGuiLayer.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/IMGUI/ImGuiLayer.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/IMGUI/ImGuiLayer.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/IMGUI/ImGuiLayer.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Renderer/IMGUI/ImGuiLayer.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/IMGUI/ImGuiLayer.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/IMGUI/ImGuiLayer.mm.i: cmake_force
@@ -234,7 +260,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Layer.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Layer.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Core/Layer.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Layer.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Layer.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Core/Layer.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Core/Layer.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Layer.mm.i: cmake_force
@@ -247,7 +273,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Timestep.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Timestep.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Core/Timestep.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Timestep.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Timestep.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Core/Timestep.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Core/Timestep.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Timestep.mm.i: cmake_force
@@ -260,7 +286,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/LayerStack.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/LayerStack.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Core/LayerStack.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/LayerStack.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/LayerStack.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Core/LayerStack.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Core/LayerStack.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/LayerStack.mm.i: cmake_force
@@ -273,7 +299,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Application.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Application.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Core/Application.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Application.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Application.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Core/Application.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Core/Application.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Application.mm.i: cmake_force
@@ -286,7 +312,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/OrthoCamera.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/OrthoCamera.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/OrthoCamera.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/OrthoCamera.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/OrthoCamera.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Renderer/OrthoCamera.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/OrthoCamera.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/OrthoCamera.mm.i: cmake_force
@@ -299,7 +325,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/OrthoCameraController.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/OrthoCameraController.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/OrthoCameraController.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/OrthoCameraController.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/OrthoCameraController.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Renderer/OrthoCameraController.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/OrthoCameraController.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/OrthoCameraController.mm.i: cmake_force
@@ -312,7 +338,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/UniformBuffer.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/UniformBuffer.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/UniformBuffer.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/UniformBuffer.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/UniformBuffer.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Renderer/UniformBuffer.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/UniformBuffer.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/UniformBuffer.mm.i: cmake_force
@@ -325,7 +351,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/EditorCamera.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/EditorCamera.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/EditorCamera.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/EditorCamera.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/EditorCamera.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Renderer/EditorCamera.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/EditorCamera.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/EditorCamera.mm.i: cmake_force
@@ -338,7 +364,7 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Input.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/flags.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Input.mm.o: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Core/Input.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Input.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Input.mm.o"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MTLToyGameEngine.dir/Core/Input.mm.o -c /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Core/Input.mm
 
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Input.mm.i: cmake_force
@@ -351,6 +377,8 @@ include /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFil
 
 # Object files for target MTLToyGameEngine
 MTLToyGameEngine_OBJECTS = \
+"CMakeFiles/MTLToyGameEngine.dir/Renderer/Swapchain.mm.o" \
+"CMakeFiles/MTLToyGameEngine.dir/Renderer/InitMetal.mm.o" \
 "CMakeFiles/MTLToyGameEngine.dir/third_party/stb_image.mm.o" \
 "CMakeFiles/MTLToyGameEngine.dir/Renderer/Renderer2D.mm.o" \
 "CMakeFiles/MTLToyGameEngine.dir/Renderer/Renderer.mm.o" \
@@ -376,6 +404,8 @@ MTLToyGameEngine_OBJECTS = \
 # External object files for target MTLToyGameEngine
 MTLToyGameEngine_EXTERNAL_OBJECTS =
 
+/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/libMTLToyGameEngine.a: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Swapchain.mm.o
+/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/libMTLToyGameEngine.a: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/InitMetal.mm.o
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/libMTLToyGameEngine.a: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/third_party/stb_image.mm.o
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/libMTLToyGameEngine.a: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Renderer2D.mm.o
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/libMTLToyGameEngine.a: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Renderer/Renderer.mm.o
@@ -399,7 +429,7 @@ MTLToyGameEngine_EXTERNAL_OBJECTS =
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/libMTLToyGameEngine.a: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/Core/Input.mm.o
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/libMTLToyGameEngine.a: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/build.make
 /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/libMTLToyGameEngine.a: /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin/CMakeFiles/MTLToyGameEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX static library libMTLToyGameEngine.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/__declspec/CLionProjects/metal-toyrenderer/SandBox/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX static library libMTLToyGameEngine.a"
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && $(CMAKE_COMMAND) -P CMakeFiles/MTLToyGameEngine.dir/cmake_clean_target.cmake
 	cd /Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/bin && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MTLToyGameEngine.dir/link.txt --verbose=$(VERBOSE)
 

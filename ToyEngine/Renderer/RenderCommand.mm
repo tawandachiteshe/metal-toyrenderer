@@ -5,30 +5,16 @@
 #include "RenderCommand.h"
 #import "Renderer.h"
 
-id<MTLRenderCommandEncoder> RenderCommand::commandEncoder = nil;
-MTLRenderPassDescriptor* RenderCommand::renderPassDescriptor = nil;
+
 
 void RenderCommand::DrawIndexed(const std::shared_ptr<VertexBuffer> &vertexBuffer,
                                 const std::shared_ptr<IndexBuffer> &indexBuffer, const std::shared_ptr<Shader>& shader, uint32_t count) {
 
+    Renderer::DrawIndexed(vertexBuffer, indexBuffer, shader,count);
 
 }
 
-void RenderCommand::Init() {
-
-}
-
-void RenderCommand::SetCommandEncoder(id <MTLRenderCommandEncoder> encoder) {
-
-    RenderCommand::commandEncoder = encoder;
-}
-
-id <MTLRenderCommandEncoder> RenderCommand::GetCommandEncoder() {
-    return commandEncoder;
-}
-
-void RenderCommand::EndCommandEncoder() {
-    [commandEncoder endEncoding];
-    [commandEncoder release];
+void RenderCommand::Clear(const glm::vec4 &clearColor) {
+    Renderer::Clear(clearColor);
 }
 

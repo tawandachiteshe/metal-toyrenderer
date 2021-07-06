@@ -3,6 +3,7 @@
 //
 
 #import <Renderer/Renderer.h>
+#import <Renderer/Swapchain.h>
 #include "Application.h"
 #import "Timestep.h"
 
@@ -13,10 +14,11 @@ Application::Application(const std::string& name, ApplicationCommandLineArgs arg
         : m_CommandLineArgs(args)
 {
     s_Instance = this;
-    m_Window = CreateScope<Window>(WindowProps(name));
-    m_Window->SetEventCallback(MT_BIND_EVENT_FN(Application::OnEvent));
 
     Renderer::Init();
+
+    m_Window = CreateScope<Window>(WindowProps(name));
+    m_Window->SetEventCallback(MT_BIND_EVENT_FN(Application::OnEvent));
 
     m_ImGuiLayer = new ImGuiLayer();
     PushOverlay(m_ImGuiLayer);
@@ -71,6 +73,8 @@ void Application::Run()
         Timestep timestep = time - m_LastFrameTime;
         m_LastFrameTime = time;
 
+        Swapchain::NextDrawable();
+
         if (!m_Minimized)
         {
             {
@@ -89,6 +93,7 @@ void Application::Run()
         }
 
         m_Window->OnUpdate();
+
     }
 }
 

@@ -8,6 +8,7 @@
 #import <Events/ApplicationEvent.h>
 #import <Events/KeyEvent.h>
 #import <Events/MouseEvent.h>
+#import <Renderer/Swapchain.h>
 
 
 static uint8_t s_GLFWWindowCount = 0;
@@ -39,10 +40,11 @@ Window::Window(const WindowProps &props) {
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
     m_window = glfwCreateWindow(props.Width, props.Height, props.Title.c_str(), NULL, NULL);
     ++s_GLFWWindowCount;
-
+    Swapchain::Init(props.Width, props.Height);
     NSWindow *nswindow = glfwGetCocoaWindow(m_window);
-    nswindow.contentView.layer = Renderer::GetSwapChain();
+    nswindow.contentView.layer = Swapchain::GetSwapchain();
     nswindow.contentView.wantsLayer = YES;
+
 
     glfwSetWindowUserPointer(m_window, &m_Data);
 
@@ -141,6 +143,7 @@ Window::Window(const WindowProps &props) {
 
 void Window::OnUpdate() {
     glfwPollEvents();
+    Swapchain::Swapbuffers();
 }
 
 void Window::Shutdown() {

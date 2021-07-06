@@ -1600,6 +1600,12 @@
 		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/IndexBuffer.mm">
 			<Option target="MTLToyGameEngine"/>
 		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/InitMetal.h">
+			<Option target="MTLToyGameEngine"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/InitMetal.mm">
+			<Option target="MTLToyGameEngine"/>
+		</Unit>
 		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/OrthoCamera.h">
 			<Option target="MTLToyGameEngine"/>
 		</Unit>
@@ -1634,6 +1640,12 @@
 			<Option target="MTLToyGameEngine"/>
 		</Unit>
 		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/Shader.mm">
+			<Option target="MTLToyGameEngine"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/Swapchain.h">
+			<Option target="MTLToyGameEngine"/>
+		</Unit>
+		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/Swapchain.mm">
 			<Option target="MTLToyGameEngine"/>
 		</Unit>
 		<Unit filename="/Users/__declspec/CLionProjects/metal-toyrenderer/ToyEngine/Renderer/Texture.h">

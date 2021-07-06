@@ -8,6 +8,7 @@
 #import "Renderer.h"
 #include <glm/gtc/type_ptr.hpp>
 #import "RenderCommand.h"
+#import "InitMetal.h"
 
 
 #pragma clang diagnostic push
@@ -15,7 +16,7 @@
 Shader::Shader(const std::string &srcPath) {
 
 
-    uniformBuffer = [Renderer::GetDevice() newBufferWithBytes: &uniforms length: sizeof(uniforms) options: MTLResourceStorageModeShared];
+    uniformBuffer = [InitMetal::GetDevice() newBufferWithBytes: &uniforms length: sizeof(uniforms) options: MTLResourceStorageModeShared];
 
     std::ifstream file;
     file.open(srcPath);
@@ -30,7 +31,7 @@ Shader::Shader(const std::string &srcPath) {
     NSString* shaderSrc = [NSString stringWithUTF8String:src.str().data()];
     NSError *error = nil;
 
-    library = [Renderer::GetDevice() newLibraryWithSource:shaderSrc options:nil error:&error];
+    library = [InitMetal::GetDevice() newLibraryWithSource:shaderSrc options:nil error:&error];
     vertexProgram = [library newFunctionWithName:@"vertex_main"];
     fragmentProgram = [library newFunctionWithName:@"fragment_main"];
 
@@ -52,7 +53,7 @@ void Shader::Bind() {
     pipelineStateDescriptor.colorAttachments[0].alphaBlendOperation = MTLBlendOperationAdd;
     pipelineStateDescriptor.colorAttachments[0].sourceAlphaBlendFactor = MTLBlendFactorOne;
     pipelineStateDescriptor.colorAttachments[0].destinationAlphaBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
-    pipelineState = [Renderer::GetDevice() newRenderPipelineStateWithDescriptor:pipelineStateDescriptor error:nil];
+    pipelineState = [InitMetal::GetDevice() newRenderPipelineStateWithDescriptor:pipelineStateDescriptor error:nil];
 
 }
 
@@ -66,7 +67,7 @@ void Shader::Release() {
 void Shader::SetMat4(const glm::mat4 &mat) {
 
     memcpy(uniformBuffer.contents, glm::value_ptr(mat), sizeof(mat));
-    [RenderCommand::GetCommandEncoder() setVertexBuffer: uniformBuffer offset: 0 atIndex:1];
+    [InitMetal::GetCommandEncoder() setVertexBuffer: uniformBuffer offset: 0 atIndex:1];
 
 }
 

@@ -4,6 +4,7 @@
 
 #include "VertexBuffer.h"
 #import "Renderer.h"
+#import "InitMetal.h"
 
 
 static MTLVertexFormat ShaderDataTypeToMetal(ShaderDataType dataType)
@@ -35,7 +36,7 @@ static MTLVertexFormat ShaderDataTypeToMetal(ShaderDataType dataType)
 
 
 VertexBuffer::VertexBuffer(void *data, uint32_t size) {
-    vertexBuffer = [Renderer::GetDevice() newBufferWithBytes:data length:size options:MTLResourceOptionCPUCacheModeDefault];
+    vertexBuffer = [InitMetal::GetDevice() newBufferWithBytes:data length:size options:MTLResourceOptionCPUCacheModeDefault];
 }
 
 
@@ -62,7 +63,7 @@ void VertexBuffer::SetLayout(const BufferLayout &layout) {
 }
 
 VertexBuffer::VertexBuffer(uint32_t size) {
-    vertexBuffer = [Renderer::GetDevice() newBufferWithLength: size options: MTLResourceStorageModeShared];
+    vertexBuffer = [InitMetal::GetDevice() newBufferWithLength: size options: MTLResourceStorageModeShared];
 }
 
 void VertexBuffer::SetData(void *data, uint32_t size) {

@@ -8,6 +8,7 @@
 #import <imgui_impl_glfw.h>
 #import <imgui_impl_metal.h>
 #import <Renderer/Renderer.h>
+#import <Renderer/InitMetal.h>
 #include "ImGuiLayer.h"
 
 
@@ -52,7 +53,7 @@ void ImGuiLayer::OnAttach()
 
     // Setup Platform/Renderer bindings
     ImGui_ImplGlfw_InitForOpenGL(window, true);
-    ImGui_ImplMetal_Init(Renderer::GetDevice());
+    ImGui_ImplMetal_Init(InitMetal::GetDevice());
 }
 
 void ImGuiLayer::OnDetach() {
@@ -75,7 +76,7 @@ void ImGuiLayer::OnEvent(Event& e)
 
 void ImGuiLayer::Begin()
 {
-    ImGui_ImplMetal_NewFrame(Renderer::GetRenderPass());
+    ImGui_ImplMetal_NewFrame(InitMetal::GetRenderPassDescriptor());
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
 }
@@ -88,7 +89,7 @@ void ImGuiLayer::End()
 
     // Rendering
     ImGui::Render();
-    ImGui_ImplMetal_RenderDrawData(ImGui::GetDrawData(), Renderer::GetCommandBuffer(), Renderer::GetCommandEncoder());
+    ImGui_ImplMetal_RenderDrawData(ImGui::GetDrawData(), InitMetal::GetCommandBuffer(), InitMetal::GetCommandEncoder());
 
 
     if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)

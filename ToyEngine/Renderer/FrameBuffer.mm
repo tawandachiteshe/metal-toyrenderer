@@ -4,6 +4,7 @@
 
 #include "FrameBuffer.h"
 #import "Renderer.h"
+#import "InitMetal.h"
 
 FrameBuffer::FrameBuffer(uint32_t width, uint32_t height) :
         m_Height(height), m_Width(width) {
@@ -23,9 +24,9 @@ FrameBuffer::FrameBuffer(uint32_t width, uint32_t height) :
     depthTextureDescriptor.usage = MTLTextureUsageRenderTarget;
     depthTextureDescriptor.storageMode = MTLStorageModePrivate;
 
-    m_Texture = [Renderer::GetDevice() newTextureWithDescriptor:textureDescriptor];
+    m_Texture = [InitMetal::GetDevice() newTextureWithDescriptor:textureDescriptor];
     m_Texture.label = @"FrameBuffer";
-    m_DepthTexture = [Renderer::GetDevice() newTextureWithDescriptor:depthTextureDescriptor];
+    m_DepthTexture = [InitMetal::GetDevice() newTextureWithDescriptor:depthTextureDescriptor];
 
 
     [textureDescriptor release];
@@ -51,7 +52,7 @@ void FrameBuffer::Bind(uint32_t textureID) {
     renderPassDesc.depthAttachment.texture = m_DepthTexture;
     renderPassDesc.stencilAttachment.texture = m_DepthTexture;
 
-    encoder = [Renderer::GetCommandBuffer() renderCommandEncoderWithDescriptor:renderPassDesc];
+    encoder = [InitMetal::GetCommandBuffer() renderCommandEncoderWithDescriptor:renderPassDesc];
 }
 
 id <MTLTexture> FrameBuffer::GetTexture() const {

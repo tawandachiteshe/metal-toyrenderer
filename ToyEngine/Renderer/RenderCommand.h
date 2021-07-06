@@ -9,23 +9,13 @@
 #include "IndexBuffer.h"
 #include "Shader.h"
 #include <memory>
+#import <Core/Base.h>
 
 class RenderCommand {
 
-private:
-    static id<MTLRenderCommandEncoder> commandEncoder;
-    static MTLRenderPassDescriptor* renderPassDescriptor;
-
 public:
-    static id <MTLRenderCommandEncoder> GetCommandEncoder();
-
-public:
-    static void SetCommandEncoder(id <MTLRenderCommandEncoder> encoder);
-    static void EndCommandEncoder();
-
-public:
-    static void DrawIndexed(const std::shared_ptr<VertexBuffer>& vertexBuffer, const std::shared_ptr<IndexBuffer>& indexBuffer, const std::shared_ptr<Shader>& shader, uint32_t count = 0);
-    static void Init();
+    static void DrawIndexed(const Ref<VertexBuffer>& vertexBuffer, const Ref<IndexBuffer>& indexBuffer, const Ref<Shader>& shader, uint32_t count = 0);
+    static void Clear(const glm::vec4& clearColor = glm::vec4(0.33f, 0.33f, 0.33f, 1.0f));
 
 };
 

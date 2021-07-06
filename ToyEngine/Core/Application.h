@@ -27,7 +27,7 @@ struct ApplicationCommandLineArgs
 class Application
 {
 public:
-    Application(const std::string& name = "Hazel App", ApplicationCommandLineArgs args = ApplicationCommandLineArgs());
+    Application(const std::string& name = "ToyEngine App", ApplicationCommandLineArgs args = ApplicationCommandLineArgs());
     virtual ~Application();
 
     void OnEvent(Event& e);

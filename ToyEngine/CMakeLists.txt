@@ -16,6 +16,10 @@ add_subdirectory(third_party/imgui-docking)
 add_library(
         # Target
         ${PROJECT_NAME}
+        Renderer/Swapchain.h
+        Renderer/Swapchain.mm
+        Renderer/InitMetal.h
+        Renderer/InitMetal.mm
         # Source Files (make sure to surround in quotations so CMake treats it as a list)
         third_party/stb_image.h
         third_party/stb_image.mm
