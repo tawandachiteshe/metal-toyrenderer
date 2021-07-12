@@ -21,6 +21,7 @@ void OrthoCameraController::OnUpdate(Timestep ts)
 
     if (Input::IsKeyPressed(Key::A))
     {
+
         m_CameraPosition.x -= cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
         m_CameraPosition.y -= sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
     }
@@ -78,8 +79,8 @@ void OrthoCameraController::OnResize(float width, float height)
 bool OrthoCameraController::OnMouseScrolled(MouseScrolledEvent& e)
 {
 
-    m_ZoomLevel -= e.GetYOffset() * 0.25f;
-    m_ZoomLevel = std::max(m_ZoomLevel, 0.25f);
+    m_ZoomLevel -= e.GetYOffset() * 0.025f;
+    m_ZoomLevel = std::max(m_ZoomLevel, 0.025f);
     m_Camera.SetProjection(-m_AspectRatio * m_ZoomLevel, m_AspectRatio * m_ZoomLevel, -m_ZoomLevel, m_ZoomLevel);
     return false;
 }

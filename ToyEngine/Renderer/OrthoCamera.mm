@@ -2,6 +2,7 @@
 // Created by __declspec on 5/7/2021.
 //
 
+#define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include "OrthoCamera.h"
 #include <glm/gtc/matrix_transform.hpp>
 

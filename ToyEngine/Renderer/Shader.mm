@@ -38,22 +38,12 @@ Shader::Shader(const std::string &srcPath) {
     if(vertexProgram == nil || fragmentProgram == nil) {
         NSLog(@"Error: failed to create Metal library: %@", error);
     }
+
+    pipelineStateDescriptor = [[MTLRenderPipelineDescriptor alloc] init];
 }
 
 void Shader::Bind() {
-    pipelineStateDescriptor = [[MTLRenderPipelineDescriptor alloc] init];
-    [pipelineStateDescriptor setVertexFunction:vertexProgram];
-    [pipelineStateDescriptor setFragmentFunction:fragmentProgram];
-    [pipelineStateDescriptor setVertexDescriptor:m_VertexLayout];
-    pipelineStateDescriptor.colorAttachments[0].pixelFormat = MTLPixelFormatBGRA8Unorm;
-    pipelineStateDescriptor.colorAttachments[0].blendingEnabled = YES;
-    pipelineStateDescriptor.colorAttachments[0].rgbBlendOperation = MTLBlendOperationAdd;
-    pipelineStateDescriptor.colorAttachments[0].sourceRGBBlendFactor = MTLBlendFactorSourceAlpha;
-    pipelineStateDescriptor.colorAttachments[0].destinationRGBBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
-    pipelineStateDescriptor.colorAttachments[0].alphaBlendOperation = MTLBlendOperationAdd;
-    pipelineStateDescriptor.colorAttachments[0].sourceAlphaBlendFactor = MTLBlendFactorOne;
-    pipelineStateDescriptor.colorAttachments[0].destinationAlphaBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
-    pipelineState = [InitMetal::GetDevice() newRenderPipelineStateWithDescriptor:pipelineStateDescriptor error:nil];
+
 
 }
 
@@ -68,6 +58,23 @@ void Shader::SetMat4(const glm::mat4 &mat) {
 
     memcpy(uniformBuffer.contents, glm::value_ptr(mat), sizeof(mat));
     [InitMetal::GetCommandEncoder() setVertexBuffer: uniformBuffer offset: 0 atIndex:1];
+
+}
+
+void Shader::SetVertexLayout(MTLVertexDescriptor *vertexLayout) {
+
+    [pipelineStateDescriptor setVertexFunction:vertexProgram];
+    [pipelineStateDescriptor setFragmentFunction:fragmentProgram];
+    [pipelineStateDescriptor setVertexDescriptor:vertexLayout];
+    pipelineStateDescriptor.colorAttachments[0].pixelFormat = MTLPixelFormatBGRA8Unorm;
+    pipelineStateDescriptor.colorAttachments[0].blendingEnabled = YES;
+    pipelineStateDescriptor.colorAttachments[0].rgbBlendOperation = MTLBlendOperationAdd;
+    pipelineStateDescriptor.colorAttachments[0].sourceRGBBlendFactor = MTLBlendFactorSourceAlpha;
+    pipelineStateDescriptor.colorAttachments[0].destinationRGBBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
+    pipelineStateDescriptor.colorAttachments[0].alphaBlendOperation = MTLBlendOperationAdd;
+    pipelineStateDescriptor.colorAttachments[0].sourceAlphaBlendFactor = MTLBlendFactorOne;
+    pipelineStateDescriptor.colorAttachments[0].destinationAlphaBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
+    pipelineState = [InitMetal::GetDevice() newRenderPipelineStateWithDescriptor:pipelineStateDescriptor error:nil];
 
 }
 

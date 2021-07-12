@@ -10,15 +10,14 @@
 Scope<Swapchain::SwapchainData> Swapchain::s_SwapchainData = CreateScope<Swapchain::SwapchainData>();
 
 
-void Swapchain::Init(uint32_t mWidth, uint32_t mHeight)
-{
+void Swapchain::Init(uint32_t mWidth, uint32_t mHeight) {
     s_SwapchainData->swapchain = [CAMetalLayer layer];
     s_SwapchainData->swapchain.device = InitMetal::GetDevice();
     s_SwapchainData->swapchain.pixelFormat = MTLPixelFormatBGRA8Unorm;
     s_SwapchainData->swapchain.drawableSize = CGSizeMake(mWidth, mHeight);
     s_SwapchainData->swapchain.framebufferOnly = YES;
     s_SwapchainData->swapchain.opaque = YES;
-    s_SwapchainData->swapchain.displaySyncEnabled = NO;
+    s_SwapchainData->swapchain.displaySyncEnabled = YES;
 
 
 }
@@ -37,4 +36,13 @@ void Swapchain::Swapbuffers() {
 
 void Swapchain::NextDrawable() {
     s_SwapchainData->drawable = [s_SwapchainData->swapchain nextDrawable];
+}
+
+void Swapchain::Release() {
+
+    [s_SwapchainData->drawable release];
+    [InitMetal::GetCommandEncoder() release];
+    [InitMetal::GetCommandBuffer() release];
+
+
 }

@@ -32,6 +32,7 @@ public:
     static CAMetalLayer* GetSwapchain() { return s_SwapchainData->swapchain; }
     static id<MTLTexture> GetTexture() { return s_SwapchainData->drawable.texture; }
     static id<CAMetalDrawable> GetDrawable() { return s_SwapchainData->drawable; }
+    static void Release();
 
 
     static void SetSize(uint32_t width, uint32_t height);

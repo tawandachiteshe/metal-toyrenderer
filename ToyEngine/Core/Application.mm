@@ -94,6 +94,8 @@ void Application::Run()
 
         m_Window->OnUpdate();
 
+        Swapchain::Release();
+
     }
 }
 

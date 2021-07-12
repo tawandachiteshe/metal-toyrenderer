@@ -27,6 +27,7 @@ void Renderer::Clear(const glm::vec4 &color) {
 
 
 void Renderer::BeginRender(const OrthoCamera& camera) {
+
     s_SceneData->ViewProjectionMatrix = camera.GetViewProjectionMatrix();
 }
 
