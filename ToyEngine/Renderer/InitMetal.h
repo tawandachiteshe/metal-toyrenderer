@@ -32,8 +32,8 @@ public:
     static id<MTLDevice> GetDevice();
     static void Clear(const glm::vec4& clearColor);
     static void DrawIndexed(const Ref<VertexBuffer> &vertexBuffer,
-                               const Ref<IndexBuffer> &indexBuffer, const Ref<Shader> &shader,
-                               uint32_t count);
+                               const Ref<IndexBuffer> &indexBuffer,
+                               uint32_t count = 0);
 
 };
 

@@ -15,6 +15,7 @@
 #import "Shader.h"
 #import "VertexBuffer.h"
 #import "IndexBuffer.h"
+#import "EditorCamera.h"
 
 class Renderer {
 
@@ -31,18 +32,16 @@ public:
 
     static void Init();
 
-    static void DrawIndexed(const Ref<VertexBuffer>& vertexBuffer, const Ref<IndexBuffer>& indexBuffer, const Ref<Shader>& shader, uint32_t count = 0);
-
     static void Clear(const glm::vec4 &color);
 
-    static void BeginRender(const OrthoCamera& camera);
+    static void BeginRender(const EditorCamera& camera);
 
     static void EndRender();
 
     static void OnWindowResize(uint32_t width, uint32_t height);
 
     static void Submit(const std::shared_ptr<VertexBuffer> &vertexBuffer, const std::shared_ptr<IndexBuffer> &indexBuffer,
-                const std::shared_ptr<Shader> &shader);
+                const std::shared_ptr<Shader> &shader, const glm::mat4& transform = glm::mat4(1.0f));
 
     static void Shutdown();
 };

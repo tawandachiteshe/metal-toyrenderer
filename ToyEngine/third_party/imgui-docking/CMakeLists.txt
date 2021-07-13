@@ -16,6 +16,8 @@ add_library(${PROJECT_NAME}
         imgui_widgets.cpp
         imgui_impl_glfw.cpp
         imgui_impl_metal.mm
+        ImGuizmo.h
+        ImGuizmo.mm
         )
 
 target_include_directories(${PROJECT_NAME} PUBLIC ../glfw/include)

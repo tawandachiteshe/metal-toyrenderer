@@ -6,9 +6,10 @@
 #define UNTITLED_ORTHOCAMERA_H
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/glm.hpp>
+#import "Camera.h"
 
 
-class OrthoCamera {
+class OrthoCamera : public Camera {
 
 public:
     OrthoCamera(float left, float right, float bottom, float top);

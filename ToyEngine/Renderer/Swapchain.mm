@@ -19,7 +19,6 @@ void Swapchain::Init(uint32_t mWidth, uint32_t mHeight) {
     s_SwapchainData->swapchain.opaque = YES;
     s_SwapchainData->swapchain.displaySyncEnabled = YES;
 
-
 }
 
 void Swapchain::SetSize(uint32_t width, uint32_t height) {

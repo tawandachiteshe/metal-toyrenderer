@@ -3,6 +3,7 @@ using namespace metal;
 
 struct Uniforms {
     float4x4 projectionview;
+    float4x4 transform;
 };
 
 struct VertexIn {
@@ -21,7 +22,7 @@ struct VertexOut {
 
 vertex VertexOut vertex_main(VertexIn in [[stage_in]], constant Uniforms &uniforms [[buffer(1)]]) {
     VertexOut out;
-    out.position = uniforms.projectionview * float4(in.position, 1);
+    out.position = uniforms.projectionview * uniforms.transform * float4(in.position, 1);
     out.color = in.color;
     out.uv = in.uv;
   return out;

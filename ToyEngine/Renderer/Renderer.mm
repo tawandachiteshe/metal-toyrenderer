@@ -26,20 +26,21 @@ void Renderer::Clear(const glm::vec4 &color) {
 }
 
 
-void Renderer::BeginRender(const OrthoCamera& camera) {
+void Renderer::BeginRender(const EditorCamera& camera) {
 
-    s_SceneData->ViewProjectionMatrix = camera.GetViewProjectionMatrix();
+    s_SceneData->ViewProjectionMatrix = camera.GetViewProjection();
 }
 
 void Renderer::EndRender() {
 }
 
 void
-Renderer::Submit(const std::shared_ptr<VertexBuffer> &vertexBuffer, const std::shared_ptr<IndexBuffer> &indexBuffer,const std::shared_ptr<Shader>& shader) {
+Renderer::Submit(const std::shared_ptr<VertexBuffer> &vertexBuffer, const std::shared_ptr<IndexBuffer> &indexBuffer, const std::shared_ptr<Shader>& shader, const glm::mat4& transform) {
 
     shader->Bind();
     shader->SetMat4(s_SceneData->ViewProjectionMatrix);
-    DrawIndexed(vertexBuffer, indexBuffer, shader);
+    shader->SetMat4(transform, 1);
+    RenderCommand::DrawIndexed(vertexBuffer, indexBuffer);
 
 }
 
@@ -48,11 +49,6 @@ void Renderer::OnWindowResize(uint32_t width, uint32_t height) {
     Swapchain::SetSize(width, height);
 }
 
-void Renderer::DrawIndexed(const Ref<VertexBuffer> &vertexBuffer,
-                           const Ref<IndexBuffer> &indexBuffer, const Ref<Shader> &shader,
-                           uint32_t count) {
-    InitMetal::DrawIndexed(vertexBuffer, indexBuffer, shader, count);
-}
 
 void Renderer::Shutdown() {
     //TODO: Clear shit here

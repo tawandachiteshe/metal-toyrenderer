@@ -38,12 +38,9 @@ void InitMetal::Clear(const glm::vec4 &clearColor) {
     renderEncoder = [commandBuffer renderCommandEncoderWithDescriptor: renderPassDescriptor];
 }
 
-void InitMetal::DrawIndexed(const Ref<VertexBuffer> &vertexBuffer,
-                           const Ref<IndexBuffer> &indexBuffer, const Ref<Shader> &shader,
+void InitMetal::DrawIndexed(const Ref<VertexBuffer> &vertexBuffer, const Ref<IndexBuffer> &indexBuffer,
                            uint32_t count) {
 
-
-    [renderEncoder setRenderPipelineState:shader->GetPipelineState()];
     [renderEncoder setVertexBuffer:vertexBuffer->GetBuffer() offset:0 atIndex:0];
     [renderEncoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle indexCount:count == 0 ? indexBuffer->GetCount() : count indexType:MTLIndexTypeUInt32
                               indexBuffer:indexBuffer->GetBuffer() indexBufferOffset:0];

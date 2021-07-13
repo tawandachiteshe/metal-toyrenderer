@@ -10,6 +10,7 @@
 #include <Core/Layer.h>
 #include <Renderer/Renderer.h>
 #include <Renderer/Texture.h>
+#include <Renderer/EditorCamera.h>
 
 class SandBox2D : public Layer{
 public:
@@ -36,8 +37,13 @@ private:
     std::shared_ptr<Texture> texture;
     std::shared_ptr<Texture> texture2;
     glm::mat4 projectionview;
+    glm::mat4 transform = glm::mat4(1.0f);
     OrthoCameraController m_CameraController;
+    EditorCamera editorCamera;
+    glm::vec3 m_Position = glm::vec3(1.0f);
+    glm::vec3 m_Scale = glm::vec3(1.0f);
 
+    uint32_t m_GizmoType = 0;
     glm::vec4 m_SquareColor = {0.2f, 0.3f, 0.8f, 1.0f};
 };
 

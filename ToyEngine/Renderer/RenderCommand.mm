@@ -4,13 +4,13 @@
 
 #include "RenderCommand.h"
 #import "Renderer.h"
-
+#import "InitMetal.h"
 
 
 void RenderCommand::DrawIndexed(const std::shared_ptr<VertexBuffer> &vertexBuffer,
-                                const std::shared_ptr<IndexBuffer> &indexBuffer, const std::shared_ptr<Shader>& shader, uint32_t count) {
+                                const std::shared_ptr<IndexBuffer> &indexBuffer, uint32_t count) {
 
-    Renderer::DrawIndexed(vertexBuffer, indexBuffer, shader,count);
+    InitMetal::DrawIndexed(vertexBuffer, indexBuffer, count);
 
 }
 

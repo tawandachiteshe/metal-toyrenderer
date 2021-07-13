@@ -53,6 +53,8 @@ add_library(
         Core/Layer.h
         Core/Timestep.mm
         Core/Timestep.h
+        Core/Math.cpp
+        Core/Math.h
         Core/KeyCodes.h
         Core/LayerStack.mm
         Core/LayerStack.h

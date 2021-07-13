@@ -24,7 +24,8 @@ private:
     id<MTLBuffer> uniformBuffer = nil;
 
     struct VertexBufferUniforms {
-        glm::mat4 mat4x4 =  glm::mat4(1.0f);
+        glm::mat4 projectionView =  glm::mat4(1.0f);
+        glm::mat4 transform = glm::mat4(1.0f);
     };
 
     VertexBufferUniforms uniforms;
@@ -34,7 +35,7 @@ public:
     id<MTLRenderPipelineState> GetPipelineState() {return pipelineState;}
     void Bind();
     void SetVertexLayout(MTLVertexDescriptor* vertexLayout);
-    void SetMat4(const glm::mat4& mat);
+    void SetMat4(const glm::mat4& mat, uint32_t index = 0);
     void Release();
 };
 

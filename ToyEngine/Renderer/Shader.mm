@@ -13,6 +13,8 @@
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "err_typecheck_invalid_operands"
+
+
 Shader::Shader(const std::string &srcPath) {
 
 
@@ -43,8 +45,7 @@ Shader::Shader(const std::string &srcPath) {
 }
 
 void Shader::Bind() {
-
-
+    [InitMetal::GetCommandEncoder() setRenderPipelineState:pipelineState];
 }
 
 void Shader::Release() {
@@ -54,9 +55,21 @@ void Shader::Release() {
     [pipelineState release];
 }
 
-void Shader::SetMat4(const glm::mat4 &mat) {
+void Shader::SetMat4(const glm::mat4 &mat, uint32_t index) {
 
-    memcpy(uniformBuffer.contents, glm::value_ptr(mat), sizeof(mat));
+    VertexBufferUniforms* pBufferUniforms = (VertexBufferUniforms*)uniformBuffer.contents;
+
+    switch (index) {
+        case 0:
+            memcpy((void *) glm::value_ptr(pBufferUniforms->projectionView), glm::value_ptr(mat), sizeof(mat));
+            break;
+        case 1:
+            memcpy((void *) glm::value_ptr(pBufferUniforms->transform), glm::value_ptr(mat), sizeof(mat));
+            break;
+        default:
+            break;
+    }
+
     [InitMetal::GetCommandEncoder() setVertexBuffer: uniformBuffer offset: 0 atIndex:1];
 
 }
@@ -74,7 +87,14 @@ void Shader::SetVertexLayout(MTLVertexDescriptor *vertexLayout) {
     pipelineStateDescriptor.colorAttachments[0].alphaBlendOperation = MTLBlendOperationAdd;
     pipelineStateDescriptor.colorAttachments[0].sourceAlphaBlendFactor = MTLBlendFactorOne;
     pipelineStateDescriptor.colorAttachments[0].destinationAlphaBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
-    pipelineState = [InitMetal::GetDevice() newRenderPipelineStateWithDescriptor:pipelineStateDescriptor error:nil];
+
+    NSError* error = NULL;
+    MTLRenderPipelineReflection* reflectionObj;
+    MTLPipelineOption option = MTLPipelineOptionBufferTypeInfo | MTLPipelineOptionArgumentInfo;
+
+    pipelineState = [InitMetal::GetDevice() newRenderPipelineStateWithDescriptor:pipelineStateDescriptor options:option reflection:&reflectionObj error:&error];
+
+
 
 }
 

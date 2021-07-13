@@ -5,6 +5,7 @@
 #ifndef UNTITLED_EDITORCAMERA_H
 #define UNTITLED_EDITORCAMERA_H
 
+#define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/glm.hpp>
 #import <Core/Timestep.h>
 #import <Events/Event.h>
